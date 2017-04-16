@@ -1,0 +1,8 @@
+source 'https://rubygems.org'
+gem 'aws-sdk'
+gem 'bundler'
+gem 'hiera-eyaml'
+gem 'hiera-eyaml-kms'
+gem 'librarian-puppet'
+gem 'puppet-lint'
+gem 'r10k'

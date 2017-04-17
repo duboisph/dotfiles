@@ -26,10 +26,18 @@ if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
   chsh -s /usr/local/bin/bash;
 fi;
 
+# Install Neovim and link it's settings to Vim's
+brew install neovim/neovim/neovim
+
+if [[ ! -d "$HOME/.config/nvim" || ! -h "$HOME/.config/nvim" ]]; then
+  mkdir -p "$HOME/.config/"
+  ln -s "$HOME/.vim" "$HOME/.config/nvim"
+  ln -s "$HOME/.vimrc" "$HOME/.config/nvim/init.vim"
+fi
+
 # Install more recent versions of some macOS tools
 brew install rsync
 brew install screen
-#brew install vim --with-override-system-vi
 
 # Install useful binaries
 brew install ansible
@@ -66,7 +74,6 @@ brew install xz
 
 # Install Casks
 brew cask install ksdiff
-brew cask install macvim
 brew cask install puppet-agent
 brew cask install vagrant
 brew cask install wercker-cli

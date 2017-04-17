@@ -29,8 +29,8 @@ alias free='free -m'
 alias ping='ping -c 5'
 alias screen='screen -U'
 alias fuser='fuser -v'
-alias vi='mvim'
-alias vim='mvim'
+alias vi='nvim'
+alias vim='nvim'
 
 
 # === COMMANDS

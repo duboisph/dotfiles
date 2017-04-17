@@ -31,12 +31,6 @@ let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled=1
 let g:enable_bold_font=1
 
-if has('gui_running')
-  set macligatures
-  set guifont=Fira\ Code\ Retina:h12
-  set guioptions=egmrt" Hide the toolbar
-endif
-
 
 " === SETTINGS
 " Note: Some defaults are already set by `tpope/vim-sensible`

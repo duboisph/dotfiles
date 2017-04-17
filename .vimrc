@@ -12,9 +12,9 @@ Plug 'airblade/vim-gitgutter'               " Shows git diff in the gutter
 Plug 'ctrlpvim/ctrlp.vim'                   " Fuzzy file finder
 Plug 'joshdick/onedark.vim'                 " One Dark color scheme
 Plug 'rodjek/vim-puppet'                    " Puppet language support
+Plug 'sheerun/vim-polyglot'                 " Collection of language packs
 Plug 'tpope/vim-sensible'                   " Sensible defaults for Vim
 Plug 'vim-airline/vim-airline'              " Cool statusline
-Plug 'vim-airline/vim-airline-themes'       " Themes for airline
 Plug 'vim-syntastic/syntastic'              " Syntax checking
 call plug#end()
 

@@ -34,7 +34,7 @@ export ANSIBLE_HOST_KEY_CHECKING=False
 
 If `~/.gitconfig.local` exists, it will be included at the end of `.gitconfig`. You can use this to set sensitive information such as your `git` user credentials.
 
-```gitconfig
+```ini
 [user]
   name = Philip Dubois
   email = philip@example.com
@@ -97,4 +97,5 @@ The code is available under the [MIT license](https://github.com/duboisph/dotfil
 For convenience, some third party assets are hard-copied in place. These particular items have their own licenses and copyrights:
 
 -   [Fira Code](https://github.com/tonsky/FiraCode) font: Copyright (c) 2014 [Nikita Prokopov](http://tonsky.me). SIL Open Font License 1.1.
+-   [onedark.vim](https://github.com/joshdick/onedark.vim) iTerm2 color scheme: Copyright (c) 2015 Joshua Dick. MIT License.
 -   [Base 16 Material Dark](https://github.com/kristijanhusak/vim-hybrid-material) iTerm colors: Copyright (c) 2015 Kristijan Husak. MIT License.

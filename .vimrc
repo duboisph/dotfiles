@@ -21,6 +21,7 @@ call plug#end()
 
 " === THEMING
 
+" Use 24-bit (true-color) mode in Neovim 0.1.5+, Vim 7.4.1799+
 if (has("termguicolors"))
   set termguicolors
 endif
@@ -39,19 +40,20 @@ set clipboard=unnamed                       " Use the OS clipboard
 set colorcolumn=80                          " Mark the 80th column
 set cursorline                              " Highlight current line
 set gdefault                                " Add the g flag to search/replace by default
-set hlsearch                                " Highlight searches
 set ignorecase                              " Ignore case of searches
 set list                                    " Show invisible characters
 set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_  " Set invisible characters
 set modeline                                " Respect modeline in files
 set mouse=a                                 " Enable mouse in all modes
-set nocompatible                            " Make Vim more useful
 set nostartofline                           " Don’t reset cursor to start of line when moving around.
 set number                                  " Enable line numbers
 set relativenumber                          " Use relative line numbers
-set showcmd                                 " Show the (partial) command as it’s being typed
 set tabstop=2                               " Make tabs as wide as two spaces
-set visualbell                              " No sounds
+
+" These are already set by Neovim
+"set hlsearch                                " Highlight searches
+"set nocompatible                            " Make Vim more useful
+"set showcmd                                 " Show the (partial) command as it’s being typed
 
 
 " === KEYBINDS

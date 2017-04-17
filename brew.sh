@@ -37,7 +37,6 @@ fi
 
 # Install more recent versions of some macOS tools
 brew install rsync
-brew install screen
 
 # Install useful binaries
 brew install ansible
@@ -60,6 +59,7 @@ brew install python
 brew install python3
 brew install rbenv
 brew install rbenv-gemset
+brew install reattach-to-user-namespace
 brew install s3cmd
 brew install shellcheck
 brew install socat

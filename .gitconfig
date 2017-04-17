@@ -73,10 +73,6 @@
   ui = auto
   interactive = auto
 
-[commit]
-  # Source: https://github.com/pstadler/keybase-gpg-github
-  gpgsign = false
-
 [diff]
   # Detect copies as well as renames
   renames = copies

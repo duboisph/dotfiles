@@ -43,7 +43,8 @@ If `~/.gitconfig.local` exists, it will be included at the end of `.gitconfig`. 
   email = philip@example.com
   signingkey = apgpkey
 [commit]
-	gpgsign = true
+  # Source: https://github.com/pstadler/keybase-gpg-github
+  gpgsign = true
 [difftool "Kaleidoscope"]
   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [mergetool "Kaleidoscope"]

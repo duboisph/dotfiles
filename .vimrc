@@ -10,7 +10,7 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'               " Shows git diff in the gutter
 Plug 'ctrlpvim/ctrlp.vim'                   " Fuzzy file finder
-Plug 'kristijanhusak/vim-hybrid-material'   " Material color scheme
+Plug 'joshdick/onedark.vim'                 " One Dark color scheme
 Plug 'rodjek/vim-puppet'                    " Puppet language support
 Plug 'tpope/vim-sensible'                   " Sensible defaults for Vim
 Plug 'vim-airline/vim-airline'              " Cool statusline
@@ -21,11 +21,15 @@ call plug#end()
 
 " === THEMING
 
+if (has("termguicolors"))
+  set termguicolors
+endif
+
 set background=dark
-colorscheme hybrid_material
-let g:airline_theme = 'hybrid'
-let g:airline#extensions#tabline#enabled = 1
-let g:enable_bold_font = 1
+colorscheme onedark
+let g:airline_theme='onedark'
+let g:airline#extensions#tabline#enabled=1
+let g:enable_bold_font=1
 
 if has('gui_running')
   set macligatures

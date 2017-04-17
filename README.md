@@ -23,6 +23,9 @@ PATH="/usr/local/sbin:$PATH"
 PATH="$PATH:/usr/local/opt/go/libexec/bin"
 export PATH
 
+MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export MANPATH
+
 # GH API token for Homebrew
 export HOMEBREW_GITHUB_API_TOKEN='somegithubtoken'
 

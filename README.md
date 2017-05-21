@@ -100,6 +100,7 @@ The code is available under the [MIT license](https://github.com/duboisph/dotfil
 
 For convenience, some third party assets are hard-copied in place. These particular items have their own licenses and copyrights:
 
+-   [Fira Mono](https://github.com/mozilla/Fira) font: Copyright (c) 2012-2015, [The Mozilla Foundation and Telefonica S.A.](https://www.mozilla.org). SIL Open Font License 1.1.
 -   [Fira Code](https://github.com/tonsky/FiraCode) font: Copyright (c) 2014 [Nikita Prokopov](http://tonsky.me). SIL Open Font License 1.1.
 -   [onedark.vim](https://github.com/joshdick/onedark.vim) iTerm2 color scheme: Copyright (c) 2015 Joshua Dick. MIT License.
 -   [Base 16 Material Dark](https://github.com/kristijanhusak/vim-hybrid-material) iTerm colors: Copyright (c) 2015 Kristijan Husak. MIT License.

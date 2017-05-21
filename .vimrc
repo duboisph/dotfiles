@@ -10,10 +10,12 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'                             " Shows git diff in the gutter
 Plug 'ctrlpvim/ctrlp.vim'                                 " Fuzzy file finder
+Plug 'godlygeek/tabular'                                  " Text alignment
 Plug 'joshdick/onedark.vim'                               " One Dark color scheme
 Plug 'rodjek/vim-puppet', { 'for': 'puppet' }             " Puppet language support
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }   " Filebrowser
 Plug 'sheerun/vim-polyglot'                               " Collection of language packs
+Plug 'sjl/gundo.vim'                                      " Visual undo tree
 Plug 'tpope/vim-sensible'                                 " Sensible defaults for Vim
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }   " Code completion
 Plug 'vim-airline/vim-airline'                            " Cool statusline

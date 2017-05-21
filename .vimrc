@@ -8,14 +8,16 @@ endif
 " Define plugins
 " Run :PlugInstall to install them
 call plug#begin('~/.vim/plugged')
-Plug 'airblade/vim-gitgutter'               " Shows git diff in the gutter
-Plug 'ctrlpvim/ctrlp.vim'                   " Fuzzy file finder
-Plug 'joshdick/onedark.vim'                 " One Dark color scheme
-Plug 'rodjek/vim-puppet'                    " Puppet language support
-Plug 'sheerun/vim-polyglot'                 " Collection of language packs
-Plug 'tpope/vim-sensible'                   " Sensible defaults for Vim
-Plug 'vim-airline/vim-airline'              " Cool statusline
-Plug 'vim-syntastic/syntastic'              " Syntax checking
+Plug 'airblade/vim-gitgutter'                             " Shows git diff in the gutter
+Plug 'ctrlpvim/ctrlp.vim'                                 " Fuzzy file finder
+Plug 'joshdick/onedark.vim'                               " One Dark color scheme
+Plug 'rodjek/vim-puppet', { 'for': 'puppet' }             " Puppet language support
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }   " Filebrowser
+Plug 'sheerun/vim-polyglot'                               " Collection of language packs
+Plug 'tpope/vim-sensible'                                 " Sensible defaults for Vim
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }   " Code completion
+Plug 'vim-airline/vim-airline'                            " Cool statusline
+Plug 'vim-syntastic/syntastic'                            " Syntax checking
 call plug#end()
 
 
@@ -28,19 +30,23 @@ endif
 
 set background=dark
 colorscheme onedark
-let g:airline_theme='onedark'
-let g:airline#extensions#tabline#enabled=1
 let g:enable_bold_font=1
 
 
 " === SETTINGS
 " Note: Some defaults are already set by `tpope/vim-sensible`
 
+let g:python_host_prog  = '/usr/local/bin/python'   " Enable the Python provider
+let g:python3_host_prog = '/usr/local/bin/python3'  " Enable the Python3 provider
+
 set clipboard=unnamed                       " Use the OS clipboard
 set colorcolumn=80                          " Mark the 80th column
 set cursorline                              " Highlight current line
+set expandtab                               " Use spaces instead of tabs
+set fixeol                                  " Add blank line at the end of a file if missing
 set gdefault                                " Add the g flag to search/replace by default
 set ignorecase                              " Ignore case of searches
+set lazyredraw                              " Buffer screen updates
 set list                                    " Show invisible characters
 set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_  " Set invisible characters
 set modeline                                " Respect modeline in files
@@ -48,12 +54,21 @@ set mouse=a                                 " Enable mouse in all modes
 set nostartofline                           " Don’t reset cursor to start of line when moving around.
 set number                                  " Enable line numbers
 set relativenumber                          " Use relative line numbers
+set shiftwidth=2                            " Make indentation (>) as wide as two spaces
 set tabstop=2                               " Make tabs as wide as two spaces
+set ttyfast                                 " Optimize for fast terminal connections
 
 " These are already set by Neovim
+"filetype plugin indent on
 "set hlsearch                                " Highlight searches
 "set nocompatible                            " Make Vim more useful
 "set showcmd                                 " Show the (partial) command as it’s being typed
+
+
+" === PLUGINSETTINGS
+
+let g:airline_theme='onedark'
+let g:airline#extensions#tabline#enabled=1
 
 
 " === KEYBINDS

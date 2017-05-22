@@ -69,6 +69,7 @@ set ttyfast                                 " Optimize for fast terminal connect
 
 " === PLUGINSETTINGS
 
+" Set Airline (statusline) theme
 let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled=1
 
@@ -80,3 +81,4 @@ nnoremap <F2> :set invpaste paste?<CR>            " Bind F2 to pastemode (no aut
 set pastetoggle=<F2>
 nnoremap <F3> :set nolist!<CR>                    " Bind F3 to hide/unhide special characters
 noremap <leader>W :w !sudo tee % > /dev/null<CR>  " Save a file as root (,W)
+map <C-n> :NERDTreeToggle<CR>                     " Bind C-n to NERDTree

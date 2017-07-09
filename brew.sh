@@ -26,26 +26,23 @@ if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
   chsh -s /usr/local/bin/bash;
 fi;
 
-# Install Neovim and link it's settings to Vim's
+# Install Neovim
 brew install neovim/neovim/neovim
-
-if [[ ! -d "$HOME/.config/nvim" || ! -h "$HOME/.config/nvim" ]]; then
-  mkdir -p "$HOME/.config/"
-  ln -s "$HOME/.vim" "$HOME/.config/nvim"
-  ln -s "$HOME/.vimrc" "$HOME/.config/nvim/init.vim"
-fi
 
 # Install more recent versions of some macOS tools
 brew install rsync
 
 # Install useful binaries
 brew install ansible
+brew install ansible-lint
 brew install awscli
 brew install git
 brew install git-lfs
 brew install gnupg
 brew install go
 brew install imagemagick --with-webp
+brew install jsonlint
+brew install kops
 brew install kubernetes-cli
 brew install minicom
 brew install mmv
@@ -69,6 +66,7 @@ brew install tcptrace
 brew install terraform
 brew install testssl
 brew install tmux
+brew install watch
 brew install wget --with-iri
 brew install xz
 

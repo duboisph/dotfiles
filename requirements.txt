@@ -1,0 +1,7 @@
+# Run `pip install -r requirements.txt` (and/or `pip3`)
+boto
+boto3
+flake8
+neovim
+vim-vint
+yamllint

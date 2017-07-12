@@ -1,4 +1,4 @@
-scriptencoding utf-8
+"scriptencoding utf-8
 
 " === PLUGINS
 
@@ -18,7 +18,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }         " Filebrowser
   Plug 'sheerun/vim-polyglot'                                     " Collection of language packs (Ansible, Puppet, TF, ...)
   Plug 'sjl/gundo.vim'                                            " Visual undo tree
-  Plug 'tpope/vim-sensible'                                       " Sensible defaults for Vim
   Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }         " Code completion
   Plug 'vim-airline/vim-airline'                                  " Cool statusline
   Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' } " Show Git status in NERDTreeToggle
@@ -64,7 +63,6 @@ set lazyredraw                              " Buffer screen updates
 set list                                    " Show invisible characters
 set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_  " Set invisible characters
 set modeline                                " Respect modeline in files
-set mouse=a                                 " Enable mouse in all modes
 set nostartofline                           " Don’t reset cursor to start of line when moving around.
 set number                                  " Enable line numbers
 set relativenumber                          " Use relative line numbers
@@ -82,7 +80,7 @@ augroup vimrc
   autocmd!
 
   " Run Neomake on every write
-  autocmd! BufWritePost * Neomake
+  autocmd BufWritePost * Neomake
 
   " Open NERDTree automatically when opening a directory
   "autocmd StdinReadPre * let s:std_in=1

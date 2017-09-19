@@ -37,20 +37,21 @@ brew install ansible
 brew install ansible-lint
 brew install awscli
 brew install git
-brew install git-lfs
 brew install gnupg
 brew install go
 brew install imagemagick --with-webp
 brew install jsonlint
 brew install kops
 brew install kubernetes-cli
+brew install kubernetes-helm
 brew install minicom
 brew install mmv
 brew install mysql
-brew install nmap
+brew install node
 brew install packer
 brew install packer-completion
 brew install percona-toolkit
+brew install postgresql
 brew install pv
 brew install python
 brew install python3
@@ -59,11 +60,8 @@ brew install rbenv-gemset
 brew install reattach-to-user-namespace
 brew install s3cmd
 brew install shellcheck
-brew install socat
-brew install tcpflow
-brew install tcpreplay
-brew install tcptrace
 brew install terraform
+brew install wata727/tflint/tflint
 brew install testssl
 brew install tmux
 brew install watch
@@ -71,10 +69,20 @@ brew install wget --with-iri
 brew install xz
 
 # Install Casks
+brew cask install fly
 brew cask install ksdiff
 brew cask install puppet-agent
 brew cask install vagrant
+brew cask install virtualbox
+brew cask install virtualbox-extension-pack
 brew cask install wercker-cli
+
+# Install fonts
+brew tap caskroom/fonts
+brew cask install font-fira-code
+brew cask install font-fira-mono
+brew cask install font-fira-sans
+brew cask install font-open-sans
 
 # Remove outdated versions from the Cellar
 brew cleanup

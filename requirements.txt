@@ -5,3 +5,4 @@ flake8
 neovim
 vim-vint
 yamllint
+yubikey-manager

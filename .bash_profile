@@ -3,7 +3,7 @@
 # === LOADING
 
 # Load the shell dotfiles
-for file in ~/.{bash_profile.local,bash_prompt,bash_aliases}; do
+for file in ~/.{bash_profile.local,bash_prompt,bash_aliases,bash_sshgpg,bash_wsl}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
@@ -54,22 +54,18 @@ for option in autocd globstar; do
   shopt -s "$option" 2> /dev/null
 done
 
+# Disable annoying bell
+#setterm -blength 0
+bind "set bell-style visible"
+
 
 # === COMPLETION
 
-# If possible, add tab completion for many more commands. This needs Bash 4 and
-# bash-completion@2 (via brew).
-if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
-  source "$(brew --prefix)/share/bash-completion/bash_completion"
-elif [ -f /etc/bash_completion ]; then
-  source /etc/bash_completion
-fi
+# If possible, add tab completion for many more commands
+[[ -f /etc/bash_completion ]] && source /etc/bash_completion
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
-[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
+[[ -f "$HOME/.ssh/config" ]] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
-
-# === COMMAND ENVIRONMENTS
-
-# Rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# Add tab completion for kubectl
+[[ $(which kubectl) ]] && source <(kubectl completion bash)

@@ -52,6 +52,10 @@
   whitespace = fix
 
 [core]
+  # Force line endings to \n
+  autocrlf = input
+  eol = lf
+
   # Use custom `.gitignore` and `.gitattributes`
   excludesfile = ~/.gitignore_global
   attributesfile = ~/.gitattributes

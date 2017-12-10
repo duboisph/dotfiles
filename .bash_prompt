@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-if [[ $COLORTERM == gnome-* && $TERM == xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
-  export TERM='gnome-256color'
-elif infocmp xterm-256color >/dev/null 2>&1; then
+if infocmp xterm-256color >/dev/null 2>&1; then
   export TERM='xterm-256color'
 fi
 
@@ -51,24 +49,24 @@ prompt_git() {
   fi
 }
 
-bold=''
+#bold=''
 reset="\e[0m"
-black="\e[0;30m"
+#black="\e[0;30m"
 red="\e[0;31m"
-green="\e[0;32m"
+#green="\e[0;32m"
 yellow="\e[0;33m"
 blue="\e[0;34m"
 magenta="\e[0;35m"
-cyan="\e[0;36m"
+#cyan="\e[0;36m"
 white="\e[0;37m"
-brightblack="\e[1;30m"
-brightred="\e[1;31m"
-brightgreen="\e[1;32m"
-brightyellow="\e[1;33m"
-brightblue="\e[1;34m"
+#brightblack="\e[1;30m"
+#brightred="\e[1;31m"
+#brightgreen="\e[1;32m"
+#brightyellow="\e[1;33m"
+#brightblue="\e[1;34m"
 brightmagenta="\e[1;35m"
-brightcyan="\e[1;36m"
-brightwhite="\e[1;37m"
+#brightcyan="\e[1;36m"
+#brightwhite="\e[1;37m"
 
 # Highlight the user name when logged in as root.
 if [[ ${EUID} == 0 ]]; then
@@ -77,16 +75,11 @@ else
   username="\[${yellow}\]\u"
 fi
 
-# Highlight the hostname when connected via SSH.
-if [[ "${SSH_TTY}" ]]; then
-  hostname="\[${bold}${red}\]@\h"
-fi
-
 # Set the terminal title and prompt
 PS1="\[\033]0;\W\007\]" # working directory (title)
 PS1+="\n" # newline
 PS1+="${username}" # username
-PS1+="${hostname}" # hostname
+PS1+="\[${brightmagenta}\]@\h" # hostname
 PS1+="\[${white}\] ("
 PS1+="\[${blue}\]\w" # working directory full path
 PS1+="\$(prompt_git \" \[${magenta}\]\" \"\[${magenta}\]\")" # Git repository details

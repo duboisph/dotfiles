@@ -56,6 +56,9 @@
   autocrlf = input
   eol = lf
 
+  # Ignore file mode changes
+  #fileMode = false
+
   # Use custom `.gitignore` and `.gitattributes`
   excludesfile = ~/.gitignore_global
   attributesfile = ~/.gitattributes
@@ -99,8 +102,7 @@
   log = true
 
 [push]
-  # Prevent accidental pushes to branches which you’re not ready to push yet
-  default = tracking
+  default = simple
   # Make `git push` push relevant annotated tags when pushing branches out.
   followTags = true
 

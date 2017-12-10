@@ -1,4 +1,7 @@
 # Run `pip install -r requirements.txt` (and/or `pip3`)
+ansible
+ansible-lint
+awscli
 boto
 boto3
 flake8

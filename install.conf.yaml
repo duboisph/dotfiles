@@ -1,0 +1,23 @@
+---
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~', ~/.config/nvim, ~/.gnupg]
+
+- link:
+    ~/.config/nvim/init.vim: .config/nvim/init.vim
+    ~/.gnupg/gpg-agent.conf: .gnupg/gpg-agent.conf
+    ~/.bash_aliases: .bash_aliases
+    ~/.bash_profile: .bash_profile
+    ~/.bash_prompt: .bash_prompt
+    ~/.bash_wsl: .bash_wsl
+    ~/.bashrc: .bashrc
+    ~/.gemrc: .gemrc
+    ~/.gitconfig: .gitconfig
+    ~/.gitconfig.local: .gitconfig.local
+    ~/.gitignore_global: .gitignore_global
+    ~/.hushlogin: .hushlogin
+    ~/.inputrc: .inputrc
+    ~/.tmux.conf: .tmux.conf

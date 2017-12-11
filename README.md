@@ -4,7 +4,7 @@
 
 **Warning:** If you want to give these dotfiles a try, you should first fork this repository, review the code, and change things according to your own taste. Use at your own risk!
 
-_TODO:_ Create installer
+[Dotbot](https://github.com/anishathalye/dotbot) is used for installation. After cloning this repo, run `./install` to automatically set up the environment. Note that the install script is idempotent: it can safely be run multiple times.
 
 ### Customization
 
@@ -16,15 +16,14 @@ If `~/.bash_profile.local` exists, it will be sourced before all other files. Yo
 
 #### `.gitconfig.local`
 
-If `~/.gitconfig.local` exists, it will be included at the end of `.gitconfig`. You can use this to set sensitive information such as your `git` user credentials.
+If `~/.gitconfig.local` exists, it will be included at the end of `.gitconfig`. You can use this to set personal and/or sensitive information such as your `git` user credentials.
 
 ```ini
 [user]
-  name = Philip Dubois
-  email = philip@example.com
-  signingkey = apgpkey
+  name = Your Name
+  email = name@example.com
+  signingkey = APGPKEY
 [commit]
-  # Source: https://github.com/pstadler/keybase-gpg-github
   gpgsign = true
 ```
 
@@ -36,10 +35,11 @@ Suggestions/improvements [welcome](https://github.com/duboisph/dotfiles/issues)!
 
 Inspiration and code was taken from many different sources:
 
--   [GitHub ❤ ~/](http://dotfiles.github.io/)
--   [Mathias Bynens' dotfiles](https://github.com/mathiasbynens/dotfiles)
--   [Kevin Deldycke's dotfiles](https://github.com/kdeldycke/dotfiles)
--   [Nick Plekhanov's Dotfiles](https://github.com/nicksp/dotfiles)
+- [GitHub ❤ ~/](http://dotfiles.github.io/)
+- [Mathias Bynens' dotfiles](https://github.com/mathiasbynens/dotfiles)
+- [Kevin Deldycke's dotfiles](https://github.com/kdeldycke/dotfiles)
+- [Nick Plekhanov's Dotfiles](https://github.com/nicksp/dotfiles)
+- [Dotbot by Anish Athalye](https://github.com/anishathalye/dotbot)
 
 ## License
 

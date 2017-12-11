@@ -110,6 +110,10 @@
   # Source: https://github.com/blog/2188-git-2-9-has-been-released/#faster-and-more-flexible-submodules
   fetchJobs = 2
 
+[gpg]
+  # Use gnupg2 for signing
+  program = gpg2
+
 # Use separate file for username / github token / etc
 [include]
   path = ~/.gitconfig.local

@@ -3,7 +3,7 @@
 # === LOADING
 
 # Load the shell dotfiles
-for file in ~/.{bash_profile.local,bash_prompt,bash_aliases,bash_sshgpg,bash_wsl}; do
+for file in ~/.{bash_profile.local,bash_prompt,bash_aliases,bash_wsl}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
@@ -61,7 +61,7 @@ bind "set bell-style visible"
 
 # === COMPLETION
 
-# If possible, add tab completion for many more commands
+# Add tab completion
 [[ -f /etc/bash_completion ]] && source /etc/bash_completion
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
@@ -69,3 +69,22 @@ bind "set bell-style visible"
 
 # Add tab completion for kubectl
 [[ $(which kubectl) ]] && source <(kubectl completion bash)
+
+
+# === GPG-AGENT
+# https://wiki.archlinux.org/index.php/GnuPG#gpg-agent
+
+# Start the GPG agent if it isn't running already
+if [ -n "$(pgrep gpg-agent)" ]; then
+  GPG_TTY=$(tty)
+  export GPG_TTY
+else
+  eval "$(gpg-agent --daemon)"
+fi
+
+# Use gpg-agent with ssh-agent emulation
+# Don't forget to add your SSH keys the first time with ssh-add(1)
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+  export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
+fi

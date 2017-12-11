@@ -39,8 +39,8 @@ let g:enable_bold_font=1
 " === SETTINGS
 
 " Enable the Python providers
-let g:python_host_prog  = '/usr/local/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python_host_prog  = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " Change cursor depending on mode
 " http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes

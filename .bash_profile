@@ -75,13 +75,9 @@ bind "set bell-style visible"
 # https://wiki.archlinux.org/index.php/GnuPG#gpg-agent
 
 # Start the GPG agent
-eval "$(gpg-agent --daemon)"
+# It's also use with ssh-agent emulation so don't forget to add your keys the
+# first time with ssh-add(1)
+unset SSH_AGENT_PID
+eval "$(gpg-agent --daemon 2> /dev/null)"
 GPG_TTY=$(tty)
 export GPG_TTY
-
-# Use gpg-agent with ssh-agent emulation
-# Don't forget to add your SSH keys the first time with ssh-add(1)
-unset SSH_AGENT_PID
-if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-  export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
-fi

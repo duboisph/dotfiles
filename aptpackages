@@ -1,0 +1,13 @@
+git
+gnupg2 gnupg-agent pinentry-curses pinentry-tty
+golang-1.9
+imagemagick
+mysql-client
+neovim
+percona-toolkit
+postgresql-client
+python python-pip
+rbenv ruby ruby-dev
+shellcheck
+swig libpcsclite-dev
+tmux

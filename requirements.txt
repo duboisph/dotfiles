@@ -1,4 +1,5 @@
-# Run `pip install -r requirements.txt` (and/or `pip3`)
+# Run `pip install --user -r requirements.txt` (and/or `pip3`)
+# and add `$HOME/.local/bin` to your PATH
 ansible
 ansible-lint
 awscli
@@ -6,6 +7,7 @@ boto
 boto3
 flake8
 neovim
+requests
 vim-vint
 yamllint
 yubikey-manager

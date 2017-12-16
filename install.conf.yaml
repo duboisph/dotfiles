@@ -11,6 +11,7 @@
     ~/.gnupg/gpg-agent.conf: .gnupg/gpg-agent.conf
     ~/.bash_aliases: .bash_aliases
     ~/.bash_profile: .bash_profile
+    ~/.bash_profile.local: .bash_profile.local
     ~/.bash_prompt: .bash_prompt
     ~/.bash_wsl: .bash_wsl
     ~/.bashrc: .bashrc
@@ -21,3 +22,11 @@
     ~/.hushlogin: .hushlogin
     ~/.inputrc: .inputrc
     ~/.tmux.conf: .tmux.conf
+
+- shell:
+    - ['sudo add-apt-repository -y ppa:git-core/ppa', Adding Git PPA...]
+    - ['sudo add-apt-repository -y ppa:neovim-ppa/stable', Adding Neovim PPA...]
+    - ['sudo apt update', Updating APT sources...]
+    - ['xargs sudo apt -y install < aptpackages', Installing APT packages...]
+    - ['pip install --user -r requirements.txt', Installing Python packages...]
+    - ['bundle install --path $HOME/.gem', Installing Ruby gems...]

@@ -2,4 +2,4 @@
 :backtrace: true
 :update_sources: true
 :verbose: false
-gem: --no-document
+gem: --no-document --user-install

@@ -15,7 +15,7 @@
     ~/.gemrc: .gemrc
     ~/.gitconfig: .gitconfig
     ~/.gitconfig.local: .gitconfig.local
-    ~/.gitignore_global: .gitignore_global
+    ~/.gitignore: .gitignore
     ~/.gnupg/gpg-agent.conf: .gnupg/gpg-agent.conf
     ~/.hushlogin: .hushlogin
     ~/.inputrc: .inputrc

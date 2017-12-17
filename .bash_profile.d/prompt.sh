@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
-if infocmp xterm-256color >/dev/null 2>&1; then
-  export TERM='xterm-256color'
-fi
+# === BASH PROMPT
 
-prompt_git() {
+# Enable 256 color support
+#if infocmp xterm-256color >/dev/null 2>&1; then
+#  export TERM='xterm-256color'
+#fi
+
+# Determine git status from the current directory
+__prompt_git() {
   local s=''
   local branchName=''
 
@@ -77,15 +81,15 @@ fi
 
 # Set the terminal title and prompt
 PS1="\[\033]0;\W\007\]" # working directory (title)
-PS1+="\n" # newline
+PS1+="\n"
 PS1+="${username}" # username
-PS1+="\[${brightmagenta}\]@\h" # hostname
+PS1+="\[${brightmagenta}\]@\h" # @hostname
 PS1+="\[${white}\] ("
-PS1+="\[${blue}\]\w" # working directory full path
-PS1+="\$(prompt_git \" \[${magenta}\]\" \"\[${magenta}\]\")" # Git repository details
+PS1+="\[${blue}\]\w" # working directory
+PS1+="\$(__prompt_git \" \[${magenta}\]\" \"\[${magenta}\]\")" # git details
 PS1+="\[${white}\])"
 PS1+="\n"
-PS1+="\[${magenta}\]\$ \[${reset}\]" # `$` (and reset color)
+PS1+="\[${magenta}\]\$ \[${reset}\]" # `$`
 export PS1
 
 PS2="\[${magenta}\]→ \[${reset}\]"

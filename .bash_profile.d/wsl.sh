@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # === WSL SPECIFIC WORKAROUNDS
+
 if grep -q Microsoft /proc/version; then
   # Set correct umask
   # https://github.com/Microsoft/WSL/issues/352

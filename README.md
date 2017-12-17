@@ -1,4 +1,4 @@
-# Philip’s dotfiles
+# Dotfiles
 
 ## Installation
 
@@ -7,12 +7,6 @@
 [Dotbot](https://github.com/anishathalye/dotbot) is used for installation. After cloning this repo, run `./install` to automatically set up the environment. Note that the install script is idempotent: it can safely be run multiple times.
 
 ### Customization
-
-The dotfiles can be extended to suit additional local requirements by using the following files `.local` files. These files are excluded from source control and can therefore be used for setting sesitive info.
-
-#### `.bash_profile.local`
-
-If `~/.bash_profile.local` exists, it will be sourced before all other files. You can use this to set your $PATH and machine specific directives.
 
 #### `.gitconfig.local`
 
@@ -40,6 +34,7 @@ Inspiration and code was taken from many different sources:
 - [Kevin Deldycke's dotfiles](https://github.com/kdeldycke/dotfiles)
 - [Nick Plekhanov's Dotfiles](https://github.com/nicksp/dotfiles)
 - [Dotbot by Anish Athalye](https://github.com/anishathalye/dotbot)
+- [Bash-it](https://github.com/Bash-it/bash-it)
 
 ## License
 

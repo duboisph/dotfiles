@@ -1,23 +1,33 @@
 #!/usr/bin/env bash
 
-# === LOADING
+# === SHELL OPTIONS
 
-# Load the shell dotfiles
-for file in ~/.{bash_profile.local,bash_prompt,bash_aliases,bash_wsl}; do
-  [ -r "$file" ] && [ -f "$file" ] && source "$file"
-done
-unset file
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob
+
+# Append to the Bash history file, rather than overwriting it
+shopt -s histappend
+
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell
+
+# Enable autocd, eg `**/qux` will enter `./foo/bar/baz/qux`
+shopt -s autocd
+
+# Enable recursive globbing, eg. `echo **/*.txt`
+shopt -s globstar
+
+# Disable annoying bell
+bind "set bell-style visible"
 
 
 # === EXPORTS
 
+# Include $HOME/bin to the PATH
 export PATH="$HOME/bin:$PATH"
 
 # Make vim the default editor
 export EDITOR='vim'
-
-# Make Python use UTF-8 encoding for output to stdin, stdout, and stderr
-export PYTHONIOENCODING='UTF-8'
 
 # Increase Bash history size. Allow 32³ entries; the default is 500
 export HISTSIZE='32768'
@@ -35,49 +45,20 @@ export LC_ALL='en_US.UTF-8'
 LESS_TERMCAP_md=$(tput setaf 3)
 export LESS_TERMCAP_md
 
+# Make Python use UTF-8 encoding for output to stdin, stdout, and stderr
+export PYTHONIOENCODING='UTF-8'
 
-# === SHELL OPTIONS
 
-# Case-insensitive globbing (used in pathname expansion)
-shopt -s nocaseglob
+# === LOADING
 
-# Append to the Bash history file, rather than overwriting it
-shopt -s histappend
-
-# Autocorrect typos in path names when using `cd`
-shopt -s cdspell
-
-# Enable some Bash 4 features when possible:
-# * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
-# * Recursive globbing, e.g. `echo **/*.txt`
-for option in autocd globstar; do
-  shopt -s "$option" 2> /dev/null
+# Load extra configs
+for file in ${HOME}/.bash_profile.d/*.sh; do
+  [ -r "$file" ] && source "$file"
 done
 
-# Disable annoying bell
-#setterm -blength 0
-bind "set bell-style visible"
+# Load extra completions
+for file in ${HOME}/.bash_completion.d/*; do
+  [ -r "$file" ] && source "$file"
+done
 
-
-# === COMPLETION
-
-# Add tab completion
-[[ -f /etc/bash_completion ]] && source /etc/bash_completion
-
-# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
-[[ -f "$HOME/.ssh/config" ]] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
-
-# Add tab completion for kubectl
-[[ $(which kubectl) ]] && source <(kubectl completion bash)
-
-
-# === GPG-AGENT
-# https://wiki.archlinux.org/index.php/GnuPG#gpg-agent
-
-# Start the GPG agent
-# It's also use with ssh-agent emulation so don't forget to add your keys the
-# first time with ssh-add(1)
-unset SSH_AGENT_PID
-eval "$(gpg-agent --daemon 2> /dev/null)"
-GPG_TTY=$(tty)
-export GPG_TTY
+unset file

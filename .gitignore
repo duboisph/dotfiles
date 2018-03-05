@@ -43,6 +43,7 @@ Session.vim
 # State and lockfiles
 .bundle/
 *.lock
+*.plan
 
 # Local changes
 *.local

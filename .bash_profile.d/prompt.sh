@@ -53,6 +53,33 @@ __prompt_git() {
   fi
 }
 
+# Determine terraform workspace from the current directory
+__prompt_tf() {
+  local workspace=''
+
+  # Check if the current directory is a Terraform project
+  if [ -d "${PWD}/.terraform" ]; then
+    workspace="$(terraform workspace show 2> /dev/null)"
+    echo -e "${1}${workspace}"
+  else
+    return
+  fi
+}
+
+# Determine kubectl context from the current directory
+__prompt_kube() {
+  local context=''
+
+  # Check if we have a kubectl config
+  if [ -f "${HOME}/.kube/config" ]; then
+    context="$(kubectl config current-context 2> /dev/null)"
+    echo -e "${1}${context}"
+  else
+    return
+  fi
+}
+
+
 #bold=''
 reset="\e[0m"
 #black="\e[0;30m"
@@ -86,7 +113,9 @@ PS1+="${username}" # username
 PS1+="\[${brightmagenta}\]@\h" # @hostname
 PS1+="\[${white}\] ("
 PS1+="\[${blue}\]\w" # working directory
-PS1+="\$(__prompt_git \" \[${magenta}\]\" \"\[${magenta}\]\")" # git details
+PS1+="\$(__prompt_git \"\[${white}\] branch \[${magenta}\]\" \"\[${magenta}\]\")" # git details
+PS1+="\$(__prompt_tf \"\[${white}\] in workspace \[${magenta}\]\")" # tf details
+PS1+="\$(__prompt_kube \"\[${white}\] on cluster \[${magenta}\]\")" # kube details
 PS1+="\[${white}\])"
 PS1+="\n"
 PS1+="\[${magenta}\]\$ \[${reset}\]" # `$`

@@ -34,7 +34,7 @@ alias psa="ps aux"
 alias psg="ps aux | grep "
 
 # IP address
- alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # Update the system
 alias update='sudo apt update && sudo apt dist-upgrade'

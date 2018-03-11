@@ -10,7 +10,7 @@
 # Determine git status from the current directory
 __prompt_git() {
   local s=''
-  local branchName=''
+  local branch=''
 
   # Check if the current directory is in a Git repository.
   if [ "$(git rev-parse --is-inside-work-tree &>/dev/null; echo "${?}")" == '0' ]; then
@@ -43,11 +43,11 @@ __prompt_git() {
     # Get the short symbolic ref.
     # If HEAD isn’t a symbolic ref, get the short SHA for the latest commit
     # Otherwise, just give up.
-    branchName="$(git symbolic-ref --quiet --short HEAD 2> /dev/null || \
+    branch="$(git symbolic-ref --quiet --short HEAD 2> /dev/null || \
       git rev-parse --short HEAD 2> /dev/null || \
       echo '(unknown)')"
 
-    echo -e "${1}${branchName}${2}${s}"
+    echo -e "${1}${branch}${s}${2}"
   else
     return
   fi
@@ -60,65 +60,64 @@ __prompt_tf() {
   # Check if the current directory is a Terraform project
   if [ -d "${PWD}/.terraform" ]; then
     workspace="$(terraform workspace show 2> /dev/null)"
-    echo -e "${1}${workspace}"
+    echo -e "${1}${workspace}${2}"
   else
     return
   fi
 }
 
-# Determine kubectl context from the current directory
+# Determine current kubectl context
 __prompt_kube() {
   local context=''
 
   # Check if we have a kubectl config
   if [ -f "${HOME}/.kube/config" ]; then
     context="$(kubectl config current-context 2> /dev/null)"
-    echo -e "${1}${context}"
+    echo -e "${1}${context}${2}"
   else
     return
   fi
 }
 
 
-#bold=''
 reset="\e[0m"
-#black="\e[0;30m"
+black="\e[0;30m"
 red="\e[0;31m"
-#green="\e[0;32m"
+green="\e[0;32m"
 yellow="\e[0;33m"
 blue="\e[0;34m"
 magenta="\e[0;35m"
-#cyan="\e[0;36m"
+cyan="\e[0;36m"
 white="\e[0;37m"
-#brightblack="\e[1;30m"
-#brightred="\e[1;31m"
-#brightgreen="\e[1;32m"
-#brightyellow="\e[1;33m"
-#brightblue="\e[1;34m"
+brightblack="\e[1;30m"
+brightred="\e[1;31m"
+brightgreen="\e[1;32m"
+brightyellow="\e[1;33m"
+brightblue="\e[1;34m"
 brightmagenta="\e[1;35m"
-#brightcyan="\e[1;36m"
-#brightwhite="\e[1;37m"
+brightcyan="\e[1;36m"
+brightwhite="\e[1;37m"
 
 # Highlight the user name when logged in as root.
 if [[ ${EUID} == 0 ]]; then
-  username="${red}\u"
+  usercolor="${red}"
 else
-  username="\[${yellow}\]\u"
+  usercolor="\[${magenta}\]"
 fi
 
 # Set the terminal title and prompt
 PS1="\[\033]0;\W\007\]" # working directory (title)
 PS1+="\n"
-PS1+="${username}" # username
-PS1+="\[${brightmagenta}\]@\h" # @hostname
-PS1+="\[${white}\] ("
-PS1+="\[${blue}\]\w" # working directory
-PS1+="\$(__prompt_git \"\[${white}\] branch \[${magenta}\]\" \"\[${magenta}\]\")" # git details
-PS1+="\$(__prompt_tf \"\[${white}\] in workspace \[${magenta}\]\")" # tf details
-PS1+="\$(__prompt_kube \"\[${white}\] on cluster \[${magenta}\]\")" # kube details
-PS1+="\[${white}\])"
+#PS1+="${usercolor}\u" # username
+#PS1+="\[${brightmagenta}\]@\h" # @hostname
+#PS1+="\[${white}\] ("
+PS1+="\[${brightcyan}\]\w" # working directory
+PS1+="\$(__prompt_git \" \[${brightblue}\](\[${brightmagenta}\]\" \"\[${brightblue}\])\")" # git details
+PS1+="\$(__prompt_tf \" \[${brightblue}\][workspace \[${brightmagenta}\]\" \"\[${brightblue}\]]\")" # tf details
+PS1+="\$(__prompt_kube \" \[${brightblue}\][k8s \[${brightmagenta}\]\" \"\[${brightblue}\]]\")" # k8s details
+#PS1+="\[${white}\])"
 PS1+="\n"
-PS1+="\[${magenta}\]\$ \[${reset}\]" # `$`
+PS1+="${usercolor}\$ \[${reset}\]" # `$`
 export PS1
 
 PS2="\[${magenta}\]→ \[${reset}\]"

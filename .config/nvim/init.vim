@@ -12,13 +12,14 @@ endif
 call plug#begin('~/.config/nvim/plugged')
   Plug 'airblade/vim-gitgutter'                                   " Shows git diff in the gutter
   Plug 'ctrlpvim/ctrlp.vim'                                       " Fuzzy file finder
+  Plug 'dracula/vim'                                              " Dracula color scheme
   Plug 'godlygeek/tabular'                                        " Text alignment
   Plug 'joshdick/onedark.vim'                                     " One Dark color scheme
   Plug 'neomake/neomake'                                          " Async linting and make
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }         " Filebrowser
   Plug 'sheerun/vim-polyglot'                                     " Collection of language packs (Ansible, Puppet, TF, ...)
   Plug 'sjl/gundo.vim'                                            " Visual undo tree
-  Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }         " Code completion
+  "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }         " Code completion
   Plug 'vim-airline/vim-airline'                                  " Cool statusline
   Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' } " Show Git status in NERDTreeToggle
 call plug#end()
@@ -32,7 +33,7 @@ if (has('termguicolors'))
 endif
 
 set background=dark
-colorscheme onedark
+colorscheme dracula
 let g:enable_bold_font=1
 
 

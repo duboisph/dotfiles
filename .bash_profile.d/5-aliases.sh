@@ -17,11 +17,11 @@ alias rm='rm -iv'
 alias cp='cp -iav'
 alias df='df -h'
 alias free='free -m'
-alias ping='ping -c 5'
 alias fuser='fuser -v'
+alias ping='ping -c 5'
+alias vagrant='vagrant --color'
 alias vi='nvim'
 alias vim='nvim'
-alias vagrant='vagrant --color'
 
 
 # === COMMANDS

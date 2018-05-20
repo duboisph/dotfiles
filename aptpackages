@@ -1,3 +1,4 @@
+bash-completion
 docker-ce
 git git-lfs
 gnupg2 gnupg-agent pinentry-curses pinentry-tty

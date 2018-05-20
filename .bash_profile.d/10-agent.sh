@@ -11,12 +11,13 @@ export GPG_TTY=$(tty)
 # === SSH-AGENT
 # https://help.github.com/articles/working-with-ssh-key-passphrases
 
-env=~/.ssh/agent.env
+env=$HOME/.ssh/agent.env
+ttl=14400
 
 agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
 
 agent_start () {
-  (umask 077; ssh-agent >| "$env")
+  (umask 077; ssh-agent -t $ttl >| "$env")
   . "$env" >| /dev/null
 }
 
@@ -30,4 +31,5 @@ if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
 fi
 
 unset env
+unset ttl
 unset agent_run_state

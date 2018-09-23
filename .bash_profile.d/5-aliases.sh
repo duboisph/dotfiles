@@ -41,3 +41,8 @@ alias update='sudo apt update && sudo apt dist-upgrade'
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload='exec $SHELL -l'
+
+
+# === FUNCTIONS
+
+tf() { terraform "$@" $TF_STACK_PATH;}

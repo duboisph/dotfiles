@@ -10,7 +10,7 @@ if grep -q Microsoft /proc/version; then
   # Set browser to Chrome
   # https://stackoverflow.com/questions/41404536/why-is-bash-wsl-using-w3m-as-its-default-browser
   export DISPLAY=:0
-  export BROWSER=/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
+  export BROWSER=/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
 
   # Allow to run vagrant from inside WSL
   # https://www.vagrantup.com/docs/other/wsl.html

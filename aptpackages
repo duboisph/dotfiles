@@ -7,8 +7,7 @@ mysql-client
 neovim
 percona-toolkit
 postgresql-client
-python python-pip
+python3
 ruby ruby-bundler
 shellcheck
-swig libpcsclite-dev
 tmux

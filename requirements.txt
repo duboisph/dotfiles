@@ -6,6 +6,7 @@ ansible
 awscli
 boto
 boto3
+docker-compose
 #flake8
 neovim
 #pylint

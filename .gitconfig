@@ -76,6 +76,10 @@
   # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
   precomposeunicode = false
 
+  # Windows specific settings
+  #editor = 'C:\\Users\\philip\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe' --wait
+  #sshCommand = 'C:\\Windows\\System32\\OpenSSH\\ssh.exe'
+
 [color]
   diff = auto
   status = auto
@@ -122,7 +126,7 @@
   path = ~/.gitconfig.local
 
 [filter "lfs"]
-  process = git-lfs filter-process
   required = true
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process

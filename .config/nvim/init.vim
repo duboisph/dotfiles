@@ -14,7 +14,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'ctrlpvim/ctrlp.vim'                                       " Fuzzy file finder
   Plug 'dracula/vim'                                              " Dracula color scheme
   Plug 'godlygeek/tabular'                                        " Text alignment
-  Plug 'joshdick/onedark.vim'                                     " One Dark color scheme
   Plug 'neomake/neomake'                                          " Async linting and make
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }         " Filebrowser
   Plug 'sheerun/vim-polyglot'                                     " Collection of language packs (Ansible, Puppet, TF, ...)
@@ -74,7 +73,7 @@ set tabstop=2                               " Make tabs as wide as two spaces
 " === PLUGINSETTINGS
 
 " Set Airline (statusline) theme
-let g:airline_theme='onedark'
+let g:airline_theme='dracula'
 let g:airline#extensions#tabline#enabled=1
 
 augroup vimrc

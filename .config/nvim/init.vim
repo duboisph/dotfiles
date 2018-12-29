@@ -12,7 +12,7 @@ endif
 call plug#begin('~/.config/nvim/plugged')
   Plug 'airblade/vim-gitgutter'                                   " Shows git diff in the gutter
   Plug 'ctrlpvim/ctrlp.vim'                                       " Fuzzy file finder
-  Plug 'dracula/vim'                                              " Dracula color scheme
+  Plug 'dracula/vim', { 'as': 'dracula' }                         " Dracula color scheme
   Plug 'godlygeek/tabular'                                        " Text alignment
   Plug 'neomake/neomake'                                          " Async linting and make
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }         " Filebrowser

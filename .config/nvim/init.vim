@@ -21,6 +21,9 @@ call plug#begin('~/.config/nvim/plugged')
   "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }         " Code completion
   Plug 'vim-airline/vim-airline'                                  " Cool statusline
   Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' } " Show Git status in NERDTreeToggle
+  " Plugins to play nice with tmux
+  Plug 'tmux-plugins/vim-tmux-focus-events'
+  Plug 'roxma/vim-tmux-clipboard'
 call plug#end()
 
 

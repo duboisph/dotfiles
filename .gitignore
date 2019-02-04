@@ -39,6 +39,7 @@ Desktop.ini
 .*.sw[a-z]
 *.un~
 Session.vim
+*.bak
 
 # State and lockfiles
 .bundle/

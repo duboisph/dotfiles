@@ -98,7 +98,7 @@ __docker_compose_complete_services() {
 
 # The services for which at least one running container exists
 __docker_compose_complete_running_services() {
-	local names=$(__docker_compose_complete_services --filter status=running)
+	local names=$(__docker_compose_services --filter status=running)
 	COMPREPLY=( $(compgen -W "$names" -- "$cur") )
 }
 
@@ -136,7 +136,18 @@ _docker_compose_bundle() {
 
 
 _docker_compose_config() {
-	COMPREPLY=( $( compgen -W "--help --quiet -q --resolve-image-digests --services --volumes" -- "$cur" ) )
+	case "$prev" in
+		--hash)
+			if [[ $cur == \\* ]] ; then
+				COMPREPLY=( '\*' )
+			else
+				COMPREPLY=( $(compgen -W "$(__docker_compose_services) \\\* " -- "$cur") )
+			fi
+			return
+			;;
+	esac
+
+	COMPREPLY=( $( compgen -W "--hash --help --quiet -q --resolve-image-digests --services --volumes" -- "$cur" ) )
 }
 
 

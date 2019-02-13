@@ -28,4 +28,3 @@
     - ['sudo apt update', Updating APT sources...]
     - ['xargs sudo apt -y install < aptpackages', Installing APT packages...]
     - ['pip install --user -r requirements.txt', Installing Python packages...]
-    - ['git lfs install', Installing git-lfs...]

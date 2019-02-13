@@ -1,6 +1,6 @@
 bash-completion
 docker-ce
-git git-lfs
+git
 gnupg2 gnupg-agent pinentry-curses
 imagemagick
 mysql-client

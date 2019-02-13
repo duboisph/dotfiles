@@ -1,1 +1,0 @@
-[[ -x "$(which packer)" ]] && complete -C "$(which packer)" packer

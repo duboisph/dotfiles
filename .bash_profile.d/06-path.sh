@@ -2,8 +2,7 @@
 
 # === PATH
 
-PATH="$HOME/.gem/ruby/2.5.0/bin:$PATH"
-PATH="$HOME/.local/bin:$PATH"
+PATH="$HOME/bin:$PATH"
 
 export PATH
 export MANPATH

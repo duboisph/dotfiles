@@ -23,8 +23,7 @@
     ~/.terraformrc: .terraformrc
 
 - shell:
-    - ['sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"', Adding Docker CE repository...]
-    - ['curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -', Adding Docker's GPG key...]
     - ['sudo apt update', Updating APT sources...]
-    - ['xargs sudo apt -y install < aptpackages', Installing APT packages...]
-    - ['pip install --user -r requirements.txt', Installing Python packages...]
+    - ['sudo apt -y install build-essential git gnupg2 gnupg-agent pinentry-curses tmux', Installing APT packages...]
+    - ['sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"', Installing Linuxbrew...]
+    - ['brew bundle', Installing brew formulae...]

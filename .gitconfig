@@ -56,9 +56,6 @@
   autocrlf = input
   eol = lf
 
-  # Ignore file mode changes
-  #fileMode = false
-
   # Set global `.gitignore` and `.gitattributes`
   excludesfile = ~/.gitignore
   attributesfile = ~/.gitattributes
@@ -77,6 +74,7 @@
   precomposeunicode = false
 
   # Windows specific settings
+  #fileMode = false
   #editor = 'C:\\Users\\philip\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe' --wait
   #sshCommand = 'C:\\Windows\\System32\\OpenSSH\\ssh.exe'
 
@@ -118,8 +116,7 @@
   fetchJobs = 2
 
 [gpg]
-  # Use gnupg2 for signing
-  program = gpg2
+  program = gpg
 
 # Use separate file for username / github token / etc
 [include]

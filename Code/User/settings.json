@@ -19,11 +19,13 @@
     "files.eol": "\n",
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
-    "git.autofetch": true,
-    "git.confirmSync": false,
+    "git.autofetch": false,
+    "git.autorefresh": false,
     "gitlens.advanced.telemetry.enabled": false,
     "gitlens.blame.compact": true,
-    "gitlens.codeLens.enabled": false,
+    "gitlens.codeLens.scopes": [
+        "document"
+    ],
     "markdownlint.config": {
         "MD013": false,
         "MD024": {
@@ -32,13 +34,14 @@
     },
     "telemetry.enableTelemetry": false,
     "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe",
-    "terraform.path": "C:\\Users\\hello\\bin\\terraform.bat",
+    "terraform.lintPath": "C:\\Users\\hello\\bin\\tflint.exe",
+    "terraform.path": "C:\\Users\\hello\\bin\\terraform.exe",
     "vs-kubernetes": {
-        "vs-kubernetes.kubectl-path": "C:\\Users\\hello\\bin\\kubectl.bat",
-        "vs-kubernetes.helm-path": "C:\\Users\\hello\\bin\\helm.bat",
+        "vs-kubernetes.helm-path": "C:\\Users\\hello\\.vs-kubernetes\\tools\\helm\\windows-amd64\\helm.exe",
+        "vs-kubernetes.minikube-path": "C:\\Users\\hello\\.vs-kubernetes\\tools\\minikube\\windows-amd64\\minikube.exe",
+        "vs-kubernetes.draft-path": "C:\\Users\\hello\\.vs-kubernetes\\tools\\draft\\windows-amd64\\draft.exe"
     },
     "window.zoomLevel": 0,
     "workbench.colorTheme": "Dracula Soft",
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.settings.editor": "ui",
+    "workbench.iconTheme": "material-icon-theme"
 }

@@ -1,6 +1,5 @@
 brew "ansible"
 brew "awscli"
-brew "bash-completion@2"
 brew "cfssl"
 brew "docker"
 brew "docker-compose"

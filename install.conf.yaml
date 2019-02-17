@@ -10,20 +10,20 @@
   - '~/.gnupg'
 
 - link:
-    ~/.bash_completion.d: .bash_completion.d
-    ~/.bashrc.d: .bashrc.d
-    ~/.config/nvim/init.vim: .config/nvim/init.vim
-    ~/.gnupg/gpg-agent.conf: .gnupg/gpg-agent.conf
-    ~/.bash_profile: .bash_profile
-    ~/.bashrc: .bashrc
-    ~/.gemrc: .gemrc
-    ~/.gitconfig: .gitconfig
-    ~/.gitconfig.local: .gitconfig.local
-    ~/.gitignore: .gitignore
-    ~/.hushlogin: .hushlogin
-    ~/.inputrc: .inputrc
-    ~/.terraformrc: .terraformrc
-    ~/.tmux.conf: .tmux.conf
+    ~/.bash_completion.d: bash_completion.d
+    ~/.bashrc.d: bashrc.d
+    ~/.config/nvim/init.vim: config/nvim/init.vim
+    ~/.gnupg/gpg-agent.conf: gnupg/gpg-agent.conf
+    ~/.bash_profile: bash_profile
+    ~/.bashrc: bashrc
+    ~/.gemrc: gemrc
+    ~/.gitconfig: gitconfig
+    ~/.gitconfig.local: gitconfig.local
+    ~/.gitignore: gitignore
+    ~/.hushlogin: hushlogin
+    ~/.inputrc: inputrc
+    ~/.terraformrc: terraformrc
+    ~/.tmux.conf: tmux.conf
 
 - shell:
   - ['sudo apt update', Updating APT sources...]

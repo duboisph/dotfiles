@@ -32,9 +32,9 @@ Inspiration and code was taken from many different sources:
 - [GitHub ❤ ~/](http://dotfiles.github.io/)
 - [Mathias Bynens' dotfiles](https://github.com/mathiasbynens/dotfiles)
 - [Kevin Deldycke's dotfiles](https://github.com/kdeldycke/dotfiles)
-- [Nick Plekhanov's Dotfiles](https://github.com/nicksp/dotfiles)
+- [Nick Plekhanov's dotfiles](https://github.com/nicksp/dotfiles)
 - [Dotbot by Anish Athalye](https://github.com/anishathalye/dotbot)
-- [Bash-it](https://github.com/Bash-it/bash-it)
+- [mrzool's Sensible Bash](https://github.com/mrzool/bash-sensible)
 
 ## License
 

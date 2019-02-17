@@ -4,26 +4,29 @@
       create: true
       relink: true
 
-- clean: ['~', ~/.config/nvim, ~/.gnupg]
+- clean:
+  - '~'
+  - '~/.config/nvim'
+  - '~/.gnupg'
 
 - link:
     ~/.bash_completion.d: .bash_completion.d
-    ~/.bash_profile: .bash_profile
-    ~/.bash_profile.d: .bash_profile.d
-    ~/.bashrc: .bashrc
+    ~/.bashrc.d: .bashrc.d
     ~/.config/nvim/init.vim: .config/nvim/init.vim
+    ~/.gnupg/gpg-agent.conf: .gnupg/gpg-agent.conf
+    ~/.bash_profile: .bash_profile
+    ~/.bashrc: .bashrc
     ~/.gemrc: .gemrc
     ~/.gitconfig: .gitconfig
     ~/.gitconfig.local: .gitconfig.local
     ~/.gitignore: .gitignore
-    ~/.gnupg/gpg-agent.conf: .gnupg/gpg-agent.conf
     ~/.hushlogin: .hushlogin
     ~/.inputrc: .inputrc
-    ~/.tmux.conf: .tmux.conf
     ~/.terraformrc: .terraformrc
+    ~/.tmux.conf: .tmux.conf
 
 - shell:
-    - ['sudo apt update', Updating APT sources...]
-    - ['sudo apt -y install build-essential git gnupg2 gnupg-agent pinentry-curses tmux', Installing APT packages...]
-    - ['sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"', Installing Linuxbrew...]
-    - ['brew bundle', Installing brew formulae...]
+  - ['sudo apt update', Updating APT sources...]
+  - ['sudo apt -y install build-essential git gnupg2 gnupg-agent pinentry-curses tmux', Installing APT packages...]
+  - ['sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"', Installing Linuxbrew...]
+  - ['brew bundle', Installing brew formulae...]

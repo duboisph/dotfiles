@@ -1,1 +1,1 @@
-[[ -x "$(which vault)" ]] && complete -C "$(which vault)" vault
+[[ -x "$(command -v vault)" ]] && complete -C "$(command -v vault)" vault

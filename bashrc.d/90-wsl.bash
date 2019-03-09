@@ -5,9 +5,10 @@ if grep -q Microsoft /proc/version; then
   [[ "$(umask)" == '0000' ]] && umask 022
 
   # Set browser to Chrome
+  # https://stackoverflow.com/questions/41404536/why-is-bash-wsl-using-w3m-as-its-default-browser
   export DISPLAY=':0'
   export BROWSER='/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe'
 
   # Connect to the Windows Docker daemon over TCP
-  export DOCKER_HOST='tcp://0.0.0.0:2375'
+  export DOCKER_HOST='tcp://localhost:2375'
 fi

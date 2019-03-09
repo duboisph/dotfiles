@@ -27,7 +27,11 @@
     ~/.tmux.conf: tmux.conf
 
 - shell:
-  - ['sudo apt update', Updating APT sources...]
-  - ['sudo apt -y install build-essential git gnupg2 gnupg-agent pinentry-curses tmux', Installing APT packages...]
-  - ['sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"', Installing Linuxbrew...]
-  - ['brew bundle', Installing brew formulae...]
+  - command: '[[ -x "$(command -v apt)" ]] && sudo apt update'
+    description: Updating APT sources...
+  - command: '[[ -x "$(command -v apt)" ]] && sudo apt -y install build-essential git gnupg2 gnupg-agent'
+    description: Installing base APT packages...
+  - command: 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"'
+    description: Installing Homebrew...
+  - command: 'brew bundle'
+    description: Installing brew formulae...

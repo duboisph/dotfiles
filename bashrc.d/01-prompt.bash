@@ -1,28 +1,30 @@
 # === BASH PROMPT
 
+readonly PROMPT_SYMBOL="»"           # ❯
+readonly PROMPT_SYMBOL_GIT_DIRTY="*" # ☂
+readonly PROMPT_SYMBOL_GIT_STASH="$" # ⚑
+readonly PROMPT_SYMBOL_GIT_PULL="↓"  # ⇣
+readonly PROMPT_SYMBOL_GIT_PUSH="↑"  # ⇡
+
 # Determine git status
 __prompt_git() {
   local branch
   local status
 
-  # Check if the current directory is in a Git repository.
-  if (git rev-parse --is-inside-work-tree &>/dev/null); then
-    # Ensure the index is up to date
-    # git update-index --really-refresh -q &>/dev/null
-
+  # Check if the current directory is in a Git repository
+  if [[ "$(command git rev-parse --is-inside-work-tree 2>/dev/null)" == "true" ]]; then
     # If HEAD isn’t a symbolic ref, get the short SHA for the latest commit
-    branch="$(git symbolic-ref --quiet --short HEAD 2>/dev/null || \
-      git rev-parse --short HEAD 2> /dev/null || \
-      echo '(unknown)')"
+    branch="$(command git symbolic-ref --quiet --short HEAD 2>/dev/null || \
+              command git rev-parse --short HEAD 2> /dev/null)"
 
     # Check for untracked or uncommitted files
-    if [[ -n $(git status --porcelain --ignore-submodules 2>/dev/null) ]]; then
-      status+='*'
+    if [[ -n $(command git status --porcelain --ignore-submodules -unormal 2>/dev/null) ]]; then
+      status+="${PROMPT_SYMBOL_GIT_DIRTY}"
     fi
 
     # Check for stashed files
-    if (git rev-parse --verify refs/stash &>/dev/null); then
-      status+='$'
+    if (command git rev-parse --verify refs/stash &>/dev/null); then
+      status+="${PROMPT_SYMBOL_GIT_STASH}"
     fi
 
     echo -e " ${branch}${status}"
@@ -34,8 +36,8 @@ __prompt_tf() {
   local workspace
 
   if [[ -d "${PWD}/.terraform" ]]; then
-    workspace="$(terraform workspace show 2> /dev/null)"
-    echo -e " (${workspace})"
+    workspace="$(command terraform workspace show 2> /dev/null)"
+    echo -e " ${workspace}"
   fi
 }
 
@@ -47,8 +49,8 @@ __prompt_kube() {
   if [[ -f "${HOME}/.kube/config" ]]; then
     context="$(kubectl config current-context 2> /dev/null)"
     namespace="$(kubectl config view -o=jsonpath="{.contexts[?(@.name==\"${context}\")].context.namespace}")"
-    [[ -n "${namespace}" ]] && namespace="/${namespace}"
-    echo -e " (${context}${namespace})"
+    namespace=${namespace:-default}
+    echo -e " (${context}:${namespace})"
   fi
 }
 
@@ -83,9 +85,9 @@ __prompt_command() {
   # Set the terminal title and prompt
   PS1="\[\033]2;\W\007\]"
   PS1+="\n${BLUE}\w${BBLACK}$(__prompt_git)${CYAN}$(__prompt_tf)${YELLOW}$(__prompt_kube)"
-  PS1+="\n${prompt_color}» ${RESET}"
+  PS1+="\n${prompt_color}${PROMPT_SYMBOL}${RESET} "
 
-  PS2="${prompt_color}→ ${RESET}"
+  PS2="${prompt_color}${PROMPT_SYMBOL}${RESET} "
 }
 
 PROMPT_COMMAND="__prompt_command"

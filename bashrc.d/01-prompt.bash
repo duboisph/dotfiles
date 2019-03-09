@@ -41,26 +41,13 @@ __prompt_tf() {
   fi
 }
 
-# Determine kube context and namespace
-__prompt_kube() {
-  local context
-  local namespace
-
-  if [[ -f "${HOME}/.kube/config" ]]; then
-    context="$(kubectl config current-context 2> /dev/null)"
-    namespace="$(kubectl config view -o=jsonpath="{.contexts[?(@.name==\"${context}\")].context.namespace}")"
-    namespace=${namespace:-default}
-    echo -e " (${context}:${namespace})"
-  fi
-}
-
 __prompt_command() {
   local -r EXIT="$?"
   local -r RESET="\[\e[0m\]"
   # local -r BLACK="\[\e[0;30m\]"
   local -r RED="\[\e[0;31m\]"
   # local -r GREEN="\[\e[0;32m\]"
-  local -r YELLOW="\[\e[0;33m\]"
+  # local -r YELLOW="\[\e[0;33m\]"
   local -r BLUE="\[\e[0;34m\]"
   local -r MAGENTA="\[\e[0;35m\]"
   local -r CYAN="\[\e[0;36m\]"
@@ -84,7 +71,7 @@ __prompt_command() {
 
   # Set the terminal title and prompt
   PS1="\[\033]2;\W\007\]"
-  PS1+="\n${BLUE}\w${BBLACK}$(__prompt_git)${CYAN}$(__prompt_tf)${YELLOW}$(__prompt_kube)"
+  PS1+="\n${BLUE}\w${BBLACK}$(__prompt_git)${CYAN}$(__prompt_tf)"
   PS1+="\n${prompt_color}${PROMPT_SYMBOL}${RESET} "
 
   PS2="${prompt_color}${PROMPT_SYMBOL}${RESET} "

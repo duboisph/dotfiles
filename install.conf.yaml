@@ -23,6 +23,7 @@
     ~/.hushlogin: hushlogin
     ~/.inputrc: inputrc
     ~/.terraformrc: terraformrc
+    ~/.tmux: tmux
     ~/.tmux.conf: tmux.conf
 
 - shell:

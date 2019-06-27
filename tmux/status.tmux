@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-readonly TMUX_SYMBOL_K8S="\u2388"
+#readonly TMUX_SYMBOL_K8S="\u2388"
+readonly TMUX_SYMBOL_K8S="\u2638"
 
 kube_context() {
   local context

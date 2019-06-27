@@ -75,7 +75,6 @@ set tabstop=2                               " Make tabs as wide as two spaces
 " === PLUGINSETTINGS
 
 " Set Airline (statusline) theme
-let g:airline_theme='dracula'
 let g:airline#extensions#tabline#enabled=1
 
 augroup vimrc

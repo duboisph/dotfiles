@@ -29,5 +29,5 @@ alias update='sudo apt update && sudo apt dist-upgrade; brew upgrade'
 # Reload the shell (i.e. invoke as a login shell)
 alias reload='exec $SHELL -l'
 
-# Shorthand for Terraform with remote config path
-tf() { terraform "$@" $TF_STACK_PATH; }
+# Replace pbcopy by clip.exe, for easy macOS -> Windows copy pasting
+alias pbcopy='clip.exe'

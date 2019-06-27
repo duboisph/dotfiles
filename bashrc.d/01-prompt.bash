@@ -1,6 +1,7 @@
 # === BASH PROMPT
 
 readonly PROMPT_SYMBOL="»"           # ❯
+readonly PROMPT_SYMBOL_GIT=""
 readonly PROMPT_SYMBOL_GIT_DIRTY="*" # ☂
 readonly PROMPT_SYMBOL_GIT_STASH="$" # ⚑
 readonly PROMPT_SYMBOL_GIT_PULL="↓"  # ⇣
@@ -27,7 +28,7 @@ __prompt_git() {
       status+="${PROMPT_SYMBOL_GIT_STASH}"
     fi
 
-    echo -e " ${branch}${status}"
+    echo -e " ${PROMPT_SYMBOL_GIT} ${branch}${status}"
   fi
 }
 
@@ -51,7 +52,7 @@ __prompt_command() {
   local -r BLUE="\[\e[0;34m\]"
   local -r MAGENTA="\[\e[0;35m\]"
   local -r CYAN="\[\e[0;36m\]"
-  # local WHITE="\[\e[0;37m\]"
+  # local -r WHITE="\[\e[0;37m\]"
   local -r BBLACK="\[\e[1;30m\]"
   # local -r BRED="\[\e[1;31m\]"
   # local -r BGREEN="\[\e[1;32m\]"
@@ -71,7 +72,7 @@ __prompt_command() {
 
   # Set the terminal title and prompt
   PS1="\[\033]2;\W\007\]"
-  PS1+="\n${BLUE}\w${BBLACK}$(__prompt_git)${CYAN}$(__prompt_tf)"
+  PS1+="\n${BLUE}\w${MAGENTA}$(__prompt_git)${CYAN}$(__prompt_tf)"
   PS1+="\n${prompt_color}${PROMPT_SYMBOL}${RESET} "
 
   PS2="${prompt_color}${PROMPT_SYMBOL}${RESET} "

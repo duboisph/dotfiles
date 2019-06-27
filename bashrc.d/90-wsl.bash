@@ -7,7 +7,7 @@ if grep -q Microsoft /proc/version; then
   # Set browser to Chrome
   # https://stackoverflow.com/questions/41404536/why-is-bash-wsl-using-w3m-as-its-default-browser
   export DISPLAY=':0'
-  export BROWSER='/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe'
+  export BROWSER='/mnt/c/Program Files (x86)/Microsoft/Edge Dev/Application/msedge.exe'
 
   # Connect to the Windows Docker daemon over TCP
   export DOCKER_HOST='tcp://localhost:2375'

@@ -1,11 +1,11 @@
 {
     "breadcrumbs.enabled": false,
+    "editor.detectIndentation": true,
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
     "editor.fontSize": 12,
     "editor.formatOnPaste": true,
-    "editor.formatOnSave": false,
-    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "alt",
     "editor.renderWhitespace": "boundary",
@@ -15,17 +15,17 @@
     "editor.tabSize": 2,
     "editor.wordWrap": "on",
     "editor.wordWrapColumn": 80,
-    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDragAndDrop": true,
+    "extensions.showRecommendationsOnlyOnDemand": true,
     "files.associations": {
         "**/ci/**/*.yaml": "concourse-pipeline-yaml",
-        "**/skyscrapers-ci/**/*.yaml": "concourse-pipeline-yaml",
     },
     "files.eol": "\n",
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
-    "git.autofetch": false,
-    "git.autorefresh": false,
-    "gitlens.advanced.telemetry.enabled": false,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
     "gitlens.blame.compact": true,
     "gitlens.codeLens.scopes": [
         "document"
@@ -36,17 +36,37 @@
             "siblings_only": true
         }
     },
+    "npm.fetchOnlinePackageInfo": false,
+    "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
-    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe",
-    "terraform.lintPath": "C:\\Users\\hello\\bin\\tflint.exe",
-    "terraform.path": "C:\\Users\\hello\\bin\\terraform.exe",
-    "vs-kubernetes": {
-        "vs-kubernetes.helm-path": "C:\\Users\\hello\\.vs-kubernetes\\tools\\helm\\windows-amd64\\helm.exe",
-        "vs-kubernetes.minikube-path": "C:\\Users\\hello\\.vs-kubernetes\\tools\\minikube\\windows-amd64\\minikube.exe",
-        "vs-kubernetes.draft-path": "C:\\Users\\hello\\.vs-kubernetes\\tools\\draft\\windows-amd64\\draft.exe"
+    "terraform.format": {
+        "ignoreExtensionsOnSave": [
+            ".tfvars"
+        ]
     },
-    "window.zoomLevel": 0,
+    // "terraform.lintPath": "/home/linuxbrew/.linuxbrew/bin/tflint",
+    // "terraform.path": "/home/linuxbrew/.linuxbrew/bin/terraform",
+    "terraform.indexing": {
+        "enabled": true,
+        "liveIndexing": false,
+        "delay": 500,
+        "exclude": [
+            ".terraform/**/*",
+            "**/.terraform/**/*"
+        ]
+    },
+    "terraform.languageServer": {
+        "enabled": false,
+        "args": []
+    },
+    // "vs-kubernetes": {
+    //     "vs-kubernetes.helm-path": "/home/linuxbrew/.linuxbrew/bin/helm",
+    //     "vs-kubernetes.minikube-path": "/home/linuxbrew/.linuxbrew/bin/kubectl",
+    //     "vs-kubernetes.draft-path": "/home/linuxbrew/.linuxbrew/bin/draft"
+    // },
     "workbench.colorTheme": "Dracula Soft",
+    "workbench.enableExperiments": false,
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "window.zoomLevel": 0
 }

@@ -18,7 +18,6 @@ fi
 brew install \
   git \
   neovim \
-  openssh \
   tmux
 
 # Install newer version of core GNU utilities on macOS
@@ -29,6 +28,7 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     gnu-sed \
     grep \
     gnupg \
+    openssh \
     wget
 fi
 

@@ -1,0 +1,4 @@
+# Custom completion scripts. Loaded by eg. Homebrew's bash-completion@2 formula
+
+[[ -x "$(command -v terraform)" ]] && complete -C "$(command -v terraform)" terraform
+[[ -x "$(command -v vault)" ]] && complete -C "$(command -v vault)" vault

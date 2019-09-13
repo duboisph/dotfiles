@@ -21,6 +21,15 @@ If `~/.gitconfig.local` exists, it will be included at the end of `.gitconfig`. 
   gpgsign = true
 ```
 
+## Manual steps
+
+Not everything's automated unfortunately, depending on taste there's a couple of extra steps to do:
+
+- Install the Dracula theme for Powershell/CMD/WSL via <https://github.com/dracula/powershell>
+  - Or for the new Windows Terminal via <https://github.com/dracula/windows-terminal>
+- Initialize Neovim plugins by runnin `nvim` and then executing `:PlugInstall`
+- Install & configure GUI software 😅
+
 ## Feedback
 
 Suggestions/improvements [welcome](https://github.com/duboisph/dotfiles/issues)!
@@ -39,3 +48,10 @@ Inspiration and code was taken from many different sources:
 ## License
 
 The code is available under the [MIT license](https://github.com/duboisph/dotfiles/blob/master/LICENSE).
+
+For convenience some third party assets are hard-copied in place. These items have their own license and copyright:
+
+- [Dracula for Terminal.app](https://github.com/dracula/terminal-app). Copyright (c) 2016 Dracula Theme. MIT License
+- [Dracula for iTerm](https://github.com/dracula/iterm). Copyright (c) 2013-present Dracula Theme. MIT License
+- [Dracula for Xresources](https://github.com/dracula/xresources). Copyright (c) 2016 Dracula Theme. MIT License
+- [Fira Code font](https://github.com/tonsky/FiraCode). Copyright (c) 2014, The Fira Code Project Authors. SIL Open Font License 1.1

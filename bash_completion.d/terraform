@@ -1,1 +1,0 @@
-[[ -x "$(command -v terraform)" ]] && complete -C "$(command -v terraform)" terraform

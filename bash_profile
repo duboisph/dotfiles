@@ -8,7 +8,7 @@ set -o noclobber
 shopt -s checkwinsize
 
 # Automatically trim long paths in the prompt (requires Bash 4.x)
-# PROMPT_DIRTRIM=2
+#PROMPT_DIRTRIM=4
 
 # Enable history expansion with space
 # E.g. typing !!<space> will replace the !! with your last command
@@ -22,7 +22,6 @@ shopt -s nocaseglob
 
 # Disable annoying bell
 bind 'set bell-style visible'
-
 
 # === SANE HISTORY DEFAULTS
 
@@ -40,7 +39,7 @@ HISTFILESIZE="${HISTSIZE}"
 HISTCONTROL='erasedups:ignoreboth'
 
 # Don't record some commands
-HISTIGNORE='&:[ ]*:exit:ls:bg:fg:history:clear:cd:cd -:pwd:date:* --help:* help'
+HISTIGNORE='&:[ ]*:exit:ls:bg:fg:history:clear:cd:cd -:pwd:date:'
 
 # Use standard ISO 8601 timestamp
 # %F equivalent to %Y-%m-%d
@@ -53,7 +52,6 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 bind '"\e[C": forward-char'
 bind '"\e[D": backward-char'
-
 
 # === BETTER DIRECTORY NAVIGATION
 
@@ -73,7 +71,6 @@ export dotfiles="$HOME./dotfiles"
 export projects="$HOME/projects"
 export skyscrapers="$HOME/skyscrapers"
 
-
 # === MISC SETTINGS
 
 # Make nvim the default editor
@@ -87,16 +84,10 @@ export LC_ALL='en_US.UTF-8'
 LESS_TERMCAP_md="$(tput setaf 3)"
 export LESS_TERMCAP_md
 
-
 # === LOADING
 
 # Load extra configs
 for file in "$HOME"/.bashrc.d/*.bash; do
-  [[ -r "$file" ]] && source "$file"
-done
-
-# Load extra completions
-for file in "$HOME"/.bash_completion.d/*; do
   [[ -r "$file" ]] && source "$file"
 done
 

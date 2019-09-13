@@ -5,15 +5,17 @@
       relink: true
 
 - clean:
-  - '~'
-  - '~/.config/nvim'
-  - '~/.gnupg'
+    - "~"
+    - "~/.bashrc.d"
+    - "~/.config/nvim"
+    - "~/.gnupg"
+    - "~/.tmux"
 
 - link:
-    ~/.bash_completion.d: bash_completion.d
     ~/.bashrc.d: bashrc.d
     ~/.config/nvim/init.vim: config/nvim/init.vim
     ~/.gnupg/gpg-agent.conf: gnupg/gpg-agent.conf
+    ~/.bash_completion: bash_completion
     ~/.bash_profile: bash_profile
     ~/.bashrc: bashrc
     ~/.gemrc: gemrc
@@ -26,15 +28,18 @@
     ~/.terraformrc: terraformrc
     ~/.tmux: tmux
     ~/.tmux.conf: tmux.conf
+    ~/.Xresources: Xresources
 
 - shell:
-  - command: '[[ -f /etc/lsb_release ]] && sudo apt update'
-    description: Updating APT sources...
-  - command: '[[ -f /etc/lsb_release ]] && sudo apt -y install build-essential git gnupg2 gnupg-agent'
-    description: Installing base APT packages...
-  - command: '[[ "$(uname -s)" == "Linux" ]] && sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"'
-    description: Installing Linuxbrew...
-  - command: '[[ "$(uname -s)" == "Darwin" ]] && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
-    description: Installing Homebrew...
-  - command: 'brew bundle'
-    description: Installing brew formulae...
+    - command: "[[ -f /etc/lsb-release ]] && sudo apt update"
+      description: Updating APT sources...
+    - command: "[[ -f /etc/lsb-release ]] && sudo apt -y install build-essential gnupg2 gnupg-agent"
+      description: Installing base APT packages...
+    - command: '[[ "$(uname -s)" == "Linux" ]] && sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"'
+      description: Installing Homebrew (Linux)...
+    - command: '[[ "$(uname -s)" == "Darwin" ]] && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+      description: Installing Homebrew (macOS)...
+    - command: "./brew.sh"
+      description: Installing brew formulae...
+    - command: '[[ "$(uname -s)" == "Darwin" ]] && ./macos.sh'
+      description: Setting macOS preferences...

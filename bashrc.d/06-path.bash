@@ -1,2 +1,2 @@
 PATH="$HOME/bin:$PATH"
-#export PATH
+export PATH

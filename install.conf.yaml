@@ -28,11 +28,13 @@
     ~/.tmux.conf: tmux.conf
 
 - shell:
-  - command: '[[ -x "$(command -v apt)" ]] && sudo apt update'
+  - command: '[[ -f /etc/lsb_release ]] && sudo apt update'
     description: Updating APT sources...
-  - command: '[[ -x "$(command -v apt)" ]] && sudo apt -y install build-essential git gnupg2 gnupg-agent'
+  - command: '[[ -f /etc/lsb_release ]] && sudo apt -y install build-essential git gnupg2 gnupg-agent'
     description: Installing base APT packages...
-  - command: 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"'
+  - command: '[[ "$(uname -s)" == "Linux" ]] && sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"'
+    description: Installing Linuxbrew...
+  - command: '[[ "$(uname -s)" == "Darwin" ]] && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
     description: Installing Homebrew...
   - command: 'brew bundle'
     description: Installing brew formulae...

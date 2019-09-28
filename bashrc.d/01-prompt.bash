@@ -1,11 +1,9 @@
 # === BASH PROMPT
 
-readonly PROMPT_SYMBOL="»"           # ❯
+readonly PROMPT_SYMBOL="❯"  # Alt: »
 readonly PROMPT_SYMBOL_GIT=""
-readonly PROMPT_SYMBOL_GIT_DIRTY="*" # ☂
-readonly PROMPT_SYMBOL_GIT_STASH="$" # ⚑
-readonly PROMPT_SYMBOL_GIT_PULL="↓"  # ⇣
-readonly PROMPT_SYMBOL_GIT_PUSH="↑"  # ⇡
+readonly PROMPT_SYMBOL_GIT_DIRTY="*"
+readonly PROMPT_SYMBOL_GIT_STASH="$"
 
 # Determine git status
 __prompt_git() {
@@ -72,7 +70,7 @@ __prompt_command() {
 
   # Set the terminal title and prompt
   PS1="\[\033]2;\W\007\]"
-  PS1+="\n${BLUE}\w${MAGENTA}$(__prompt_git)${CYAN}$(__prompt_tf)"
+  PS1+="\n${BLUE}\w${BBLACK}$(__prompt_git)${CYAN}$(__prompt_tf)"
   PS1+="\n${prompt_color}${PROMPT_SYMBOL}${RESET} "
 
   PS2="${prompt_color}${PROMPT_SYMBOL}${RESET} "

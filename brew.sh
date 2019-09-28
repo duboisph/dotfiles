@@ -29,6 +29,7 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     grep \
     gnupg \
     openssh \
+    swig \
     wget
 fi
 
@@ -58,4 +59,5 @@ brew install \
   tfenv \
   thefuck \
   vault \
-  velero
+  velero \
+  starkandwayne/cf/spruce

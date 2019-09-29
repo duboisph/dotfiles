@@ -5,6 +5,8 @@ readonly PROMPT_SYMBOL_GIT=""
 readonly PROMPT_SYMBOL_GIT_DIRTY="*"
 readonly PROMPT_SYMBOL_GIT_STASH="$"
 
+export PROMPT_DIRTRIM=5
+
 # Determine git status
 __prompt_git() {
   local branch

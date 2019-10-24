@@ -7,7 +7,7 @@ brew update
 brew upgrade
 
 # Install latest Bash and set as default
-# brew install bash bash-completion@2
+brew install bash bash-completion@2
 
 if ! grep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
   echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells
@@ -20,7 +20,31 @@ brew install \
   neovim \
   tmux
 
-# Install newer version of core GNU utilities on macOS
+# Install utilities
+brew install \
+  ansible \
+  awscli \
+  docker \
+  docker-compose \
+  go \
+  jq \
+  kubectx \
+  kubernetes-cli \
+  kubernetes-helm \
+  kustomize \
+  mysql-client \
+  python \
+  python-yq \
+  shellcheck \
+  sonobuoy \
+  teleport \
+  terraform-docs \
+  tfenv \
+  thefuck \
+  vault \
+  velero
+
+# Install these only on macOS (like newer version of core GNU utils)
 if [[ "$(uname -s)" == "Darwin" ]]; then
   brew install \
     coreutils \
@@ -30,34 +54,6 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     gnupg \
     openssh \
     swig \
-    wget
+    wget \
+    starkandwayne/cf/spruce
 fi
-
-# Install utilities
-brew install \
-  ansible \
-  awscli \
-  calicoctl \
-  cfssl \
-  docker \
-  docker-compose \
-  go \
-  jq \
-  kops \
-  kubectx \
-  kubernetes-cli \
-  kubernetes-helm \
-  kustomize \
-  mysql-client \
-  python \
-  python-yq \
-  ruby \
-  shellcheck \
-  sonobuoy \
-  teleport \
-  terraform-docs \
-  tfenv \
-  thefuck \
-  vault \
-  velero \
-  starkandwayne/cf/spruce

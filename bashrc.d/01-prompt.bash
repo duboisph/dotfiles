@@ -1,7 +1,7 @@
 # === BASH PROMPT
 
 readonly PROMPT_SYMBOL="❯"  # Alt: »
-readonly PROMPT_SYMBOL_GIT=""
+# readonly PROMPT_SYMBOL_GIT=""
 readonly PROMPT_SYMBOL_GIT_DIRTY="*"
 readonly PROMPT_SYMBOL_GIT_STASH="$"
 
@@ -28,7 +28,8 @@ __prompt_git() {
       status+="${PROMPT_SYMBOL_GIT_STASH}"
     fi
 
-    echo -e " ${PROMPT_SYMBOL_GIT} ${branch}${status}"
+    # echo -e " ${PROMPT_SYMBOL_GIT} ${branch}${status}"
+    echo -e " ${branch}${status}"
   fi
 }
 

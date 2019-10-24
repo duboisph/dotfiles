@@ -39,7 +39,7 @@ HISTFILESIZE="${HISTSIZE}"
 HISTCONTROL='erasedups:ignoreboth'
 
 # Don't record some commands
-HISTIGNORE='&:[ ]*:exit:ls:bg:fg:history:clear:cd:cd -:pwd:date:'
+HISTIGNORE='&:[ ]*:exit:ls:bg:fg:history:clear:cd:cd -:pwd:date:vault:'
 
 # Use standard ISO 8601 timestamp
 # %F equivalent to %Y-%m-%d

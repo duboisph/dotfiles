@@ -24,23 +24,29 @@ brew install \
 brew install \
   ansible \
   awscli \
-  docker \
   docker-compose \
+  git-crypt \
   go \
+  helm \
+  ipcalc \
   jq \
+  krew \
   kubectx \
   kubernetes-cli \
-  kubernetes-helm \
   kustomize \
   mysql-client \
+  pulumi \
+  pwgen \
   python \
   python-yq \
+  ruby \
   shellcheck \
   sonobuoy \
+  sops \
   teleport \
   terraform-docs \
   tfenv \
-  thefuck \
+  unzip \
   vault \
   velero
 

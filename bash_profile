@@ -7,9 +7,6 @@ set -o noclobber
 # Update window size after every command
 shopt -s checkwinsize
 
-# Automatically trim long paths in the prompt (requires Bash 4.x)
-#PROMPT_DIRTRIM=4
-
 # Enable history expansion with space
 # E.g. typing !!<space> will replace the !! with your last command
 bind Space:magic-space
@@ -72,6 +69,9 @@ export projects="$HOME/projects"
 export skyscrapers="$HOME/skyscrapers"
 
 # === MISC SETTINGS
+
+# Indicate 24-bit color support
+export COLORTERM='truecolor'
 
 # Make nvim the default editor
 export EDITOR='nvim'

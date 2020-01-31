@@ -9,9 +9,9 @@ else # macOS `ls`
   export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
 fi
 
-alias ll="ls -hlF  ${lsflags}"
+alias ll="ls -hlF ${lsflags}"
 alias la="ls -hlaF ${lsflags}"
-alias ls="ls -hF   ${lsflags}"
+alias ls="ls -hF ${lsflags}"
 
 # defaults
 alias grep='grep --color=auto'
@@ -24,14 +24,17 @@ alias df='df -h'
 alias free='free -m'
 alias fuser='fuser -v'
 alias ping='ping -c 5'
-alias vi='nvim'
-alias vim="nvim"
+
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+  alias vi='nvim'
+fi
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
 # IP address
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # Update the system
 if [[ -f /etc/lsb-release ]]; then
@@ -49,3 +52,12 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 # Merge PDF files, preserving hyperlinks
 # Usage: `mergepdf input{1,2,3}.pdf`
 alias mergepdf='gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=_merged.pdf'
+
+# Alias to get WSL2 time back in sync with HW
+alias timesync='sudo hwclock -s'
+
+# Passwords!
+gen-password() { openssl rand -base64 ${1:-16}; }
+
+# Kube-dashboard through kauthproxy
+alias kube-dashboard='kubectl auth-proxy -n kube-system https://kubernetes-dashboard.svc'

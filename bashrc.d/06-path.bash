@@ -3,4 +3,5 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 fi
 
 PATH="$HOME/bin:$PATH"
+PATH="$HOME/.krew/bin/:$PATH"
 export PATH

@@ -11,29 +11,25 @@ endif
 " Run :PlugInstall to install them
 call plug#begin('~/.config/nvim/plugged')
   Plug 'airblade/vim-gitgutter'                                   " Shows git diff in the gutter
-  "Plug 'ctrlpvim/ctrlp.vim'                                       " Fuzzy file finder
   Plug 'dracula/vim', { 'as': 'dracula' }                         " Dracula color scheme
   Plug 'godlygeek/tabular'                                        " Text alignment
   Plug 'neomake/neomake'                                          " Async linting and make
   "Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }         " Filebrowser
   Plug 'sheerun/vim-polyglot'                                     " Collection of language packs (Ansible, Puppet, TF, ...)
   "Plug 'sjl/gundo.vim'                                            " Visual undo tree
-  "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }         " Code completion
   Plug 'vim-airline/vim-airline'                                  " Cool statusline
   "Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' } " Show Git status in NERDTreeToggle
   " Plugins to play nice with tmux
   Plug 'tmux-plugins/vim-tmux-focus-events'
   Plug 'roxma/vim-tmux-clipboard'
+  Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 call plug#end()
 
 
 " === THEMING
 
 " Use 24-bit (true-color) mode in Neovim 0.1.5+, Vim 7.4.1799+
-if (has('termguicolors'))
-  set termguicolors
-endif
-
+set termguicolors
 colorscheme dracula
 let g:enable_bold_font=1
 
@@ -41,8 +37,8 @@ let g:enable_bold_font=1
 " === SETTINGS
 
 " Enable the Python providers
-let g:python_host_prog  = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python_host_prog  = '/home/linuxbrew/.linuxbrew/bin/python'
+let g:python3_host_prog = '/home/linuxbrew/.linuxbrew/bin/python3'
 
 " Change cursor depending on mode
 " http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
@@ -54,7 +50,7 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 set synmaxcol=256
 syntax sync minlines=256
 
-set clipboard=unnamed                       " Use the OS clipboard
+set clipboard=unnamedplus                   " Use the OS clipboard
 set colorcolumn=80                          " Mark the 80th column
 set cursorline                              " Highlight current line
 set expandtab                               " Use spaces instead of tabs

@@ -95,6 +95,9 @@
   # Use `hexdump` to diff binary files
   textconv = hexdump -v -C
 
+[diff "sopsdiffer"]
+	textconv = sops -d
+
 [help]
   # Automatically correct and execute mistyped commands
   autocorrect = 1

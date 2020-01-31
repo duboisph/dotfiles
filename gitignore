@@ -48,6 +48,3 @@ Session.vim
 
 # Local changes
 *.local
-
-# Sensitive files
-secrets.yml

@@ -25,8 +25,8 @@ If `~/.gitconfig.local` exists, it will be included at the end of `.gitconfig`. 
 
 Not everything's automated unfortunately, depending on taste there's a couple of extra steps to do:
 
-- Install the Dracula theme for Powershell/CMD/WSL via <https://github.com/dracula/powershell>
-  - Or for the new Windows Terminal via <https://github.com/dracula/windows-terminal>
+- DOwnload and install the Cascadia Code font via <https://github.com/microsoft/cascadia-code>
+- Install the Dracula theme for the new Windows Terminal via <https://github.com/dracula/windows-terminal>
 - Initialize Neovim plugins by runnin `nvim` and then executing `:PlugInstall`
 - Install & configure GUI software 😅
 

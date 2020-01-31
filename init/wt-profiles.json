@@ -8,38 +8,47 @@
         {
             // Make changes here to the powershell.exe profile
             "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+            "hidden": false,
             "name": "Windows PowerShell",
             "commandline": "powershell.exe",
-            "hidden": false
+            "fontFace": "Cascadia Code",
+            "fontSize": 10
         },
         {
             // Make changes here to the cmd.exe profile
             "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+            "hidden": false,
             "name": "cmd",
             "commandline": "cmd.exe",
-            "hidden": false
+            "fontFace": "Cascadia Code",
+            "fontSize": 10
         },
         {
             "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
             "hidden": false,
             "name": "Ubuntu",
             "source": "Windows.Terminal.Wsl",
-            "startingDirectory": "\\\\wsl$\\Ubuntu\\home\\philip",
+            "startingDirectory": "//wsl$/Ubuntu/home/philip",
             "icon": "C:\\Users\\phili\\OneDrive\\Pictures\\icon-ubuntu-32.png",
             "colorScheme": "Dracula",
+            "cursorShape": "bar",
             "fontFace": "Cascadia Code",
-            "fontSize": 10
+            "fontSize": 10,
+            "scrollbarState": "hidden"
         },
         {
             "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
             "hidden": false,
             "name": "Azure Cloud Shell",
-            "source": "Windows.Terminal.Azure"
+            "source": "Windows.Terminal.Azure",
+            "fontFace": "Cascadia Code",
+            "fontSize": 10
         }
     ],
     // Add custom color schemes to this array
     "schemes": [
         {
+            "name": "Dracula",
             "background": "#282A36",
             "black": "#21222C",
             "blue": "#BD93F9",
@@ -54,7 +63,6 @@
             "cyan": "#8BE9FD",
             "foreground": "#F8F8F2",
             "green": "#50FA7B",
-            "name": "Dracula",
             "purple": "#FF79C6",
             "red": "#FF5555",
             "white": "#F8F8F2",
@@ -64,6 +72,30 @@
     // Add any keybinding overrides to this array.
     // To unbind a default keybinding, set the command to "unbound"
     "keybindings": [
+        {
+            "command": "copy",
+            "keys": [
+                "ctrl+shift+c"
+            ]
+        },
+        {
+            "command": "copy",
+            "keys": [
+                "ctrl+insert"
+            ]
+        },
+        {
+            "command": "paste",
+            "keys": [
+                "ctrl+shift+v"
+            ]
+        },
+        {
+            "command": "paste",
+            "keys": [
+                "shift+insert"
+            ]
+        },
         {
             "command": "unbound",
             "keys": [

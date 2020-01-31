@@ -1,16 +1,16 @@
 {
     "breadcrumbs.enabled": false,
     "editor.detectIndentation": true,
-    "editor.fontFamily": "Fira Code",
+    "editor.fontFamily": "Cascadia Code",
     "editor.fontLigatures": true,
-    "editor.fontSize": 12,
+    "editor.fontSize": 13,
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "alt",
     "editor.renderWhitespace": "boundary",
     "editor.rulers": [
-        80
+      80
     ],
     "editor.tabSize": 2,
     "editor.wordWrap": "on",
@@ -18,7 +18,7 @@
     "explorer.confirmDragAndDrop": true,
     "extensions.showRecommendationsOnlyOnDemand": true,
     "files.associations": {
-        "**/ci/**/*.yaml": "concourse-pipeline-yaml",
+      "**/ci/**/*.yaml": "concourse-pipeline-yaml",
     },
     "files.eol": "\n",
     "files.insertFinalNewline": true,
@@ -28,38 +28,39 @@
     "git.enableSmartCommit": true,
     "gitlens.blame.compact": true,
     "gitlens.codeLens.scopes": [
-        "document"
+      "document"
     ],
     "markdownlint.config": {
-        "MD013": false,
-        "MD024": {
-            "siblings_only": true
-        }
+      "MD013": false,
+      "MD024": {
+        "siblings_only": true
+      }
     },
     "npm.fetchOnlinePackageInfo": false,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "terraform.format": {
-        "ignoreExtensionsOnSave": [
-            ".tfvars"
-        ]
+      "ignoreExtensionsOnSave": [
+        ".tfvars"
+      ]
     },
     "terraform.indexing": {
-        "enabled": true,
-        "liveIndexing": false,
-        "delay": 500,
-        "exclude": [
-            ".terraform/**/*",
-            "**/.terraform/**/*"
-        ]
+      "enabled": false,
+      "liveIndexing": false,
+      "delay": 500,
+      "exclude": [
+        ".terraform/**/*",
+        "**/.terraform/**/*"
+      ]
     },
     "terraform.languageServer": {
-        "enabled": false,
-        "args": []
+      "enabled": true,
+      "args": []
     },
     "workbench.colorTheme": "Dracula Soft",
     "workbench.enableExperiments": false,
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "newUntitledFile",
     "window.zoomLevel": 0
-}
+  }
+  

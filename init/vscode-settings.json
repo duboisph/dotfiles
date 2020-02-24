@@ -25,6 +25,7 @@
     "files.trimFinalNewlines": true,
     "git.autofetch": true,
     "git.confirmSync": false,
+    "git.enableCommitSigning": true,
     "git.enableSmartCommit": true,
     "gitlens.blame.compact": true,
     "gitlens.codeLens.scopes": [
@@ -36,6 +37,7 @@
         "siblings_only": true
       }
     },
+    "markdown.extension.tableFormatter.enabled": false,
     "npm.fetchOnlinePackageInfo": false,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,

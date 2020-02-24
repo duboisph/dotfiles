@@ -29,7 +29,7 @@
             "name": "Ubuntu",
             "source": "Windows.Terminal.Wsl",
             "startingDirectory": "//wsl$/Ubuntu/home/philip",
-            "icon": "C:\\Users\\phili\\OneDrive\\Pictures\\icon-ubuntu-32.png",
+            "icon": "C:\\Users\\philip\\Dropbox\\Pictures\\icon-ubuntu-32.png",
             "colorScheme": "Dracula",
             "cursorShape": "bar",
             "fontFace": "Cascadia Code",

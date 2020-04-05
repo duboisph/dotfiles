@@ -1,17 +1,14 @@
-$include /etc/inputrc
-"\C-p":history-search-backward
-"\C-n":history-search-forward
-
-set colored-stats On
+set colored-stats on
 set completion-ignore-case On
 set completion-prefix-display-length 3
-set mark-symlinked-directories On
-set show-all-if-ambiguous On
-set show-all-if-unmodified On
-set visible-stats On
-set match-hidden-files Off
-set skip-completed-text On
-set input-meta On
-set output-meta On
-set convert-meta Off
+set mark-symlinked-directories on
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+set visible-stats on
+set match-hidden-files off
+set skip-completed-text on
+set input-meta on
+set output-meta on
+set convert-meta off
 
+"\C-l": clear-screen

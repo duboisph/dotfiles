@@ -49,6 +49,7 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 bind '"\e[C": forward-char'
 bind '"\e[D": backward-char'
+bind -x '"\C-l": clear;'
 
 # === BETTER DIRECTORY NAVIGATION
 

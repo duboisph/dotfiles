@@ -44,8 +44,8 @@ brew install \
   sonobuoy \
   sops \
   teleport \
+  terraform \
   terraform-docs \
-  tfenv \
   unzip \
   vault \
   velero

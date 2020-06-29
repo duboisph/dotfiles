@@ -57,4 +57,4 @@ alias timesync='sudo hwclock -s'
 gen-password() { openssl rand -base64 ${1:-16}; }
 
 # Kube-dashboard through kauthproxy
-alias kube-dashboard='kubectl auth-proxy -n kube-system https://kubernetes-dashboard.svc'
+alias kube-dashboard='kubectl auth-proxy -n kubernetes-dashboard https://kubernetes-dashboard.svc'

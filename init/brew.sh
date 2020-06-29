@@ -28,15 +28,13 @@ brew install \
   git-crypt \
   go \
   helm \
-  ipcalc \
+  googlecontainertools/kpt/kpt \
   jq \
   krew \
   kubectx \
   kubernetes-cli \
   kustomize \
   mysql-client \
-  pulumi \
-  pwgen \
   python \
   python-yq \
   ruby \
@@ -60,6 +58,5 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     gnupg \
     openssh \
     swig \
-    wget \
-    starkandwayne/cf/spruce
+    wget
 fi

@@ -1,68 +1,55 @@
 {
-    "breadcrumbs.enabled": false,
-    "editor.detectIndentation": true,
-    "editor.fontFamily": "Cascadia Code",
-    "editor.fontLigatures": true,
-    "editor.fontSize": 13,
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
-    "editor.minimap.enabled": false,
-    "editor.multiCursorModifier": "alt",
-    "editor.renderWhitespace": "boundary",
-    "editor.rulers": [
-      80
-    ],
-    "editor.tabSize": 2,
-    "editor.wordWrap": "on",
-    "editor.wordWrapColumn": 80,
-    "explorer.confirmDragAndDrop": true,
-    "extensions.showRecommendationsOnlyOnDemand": true,
-    "files.associations": {
-      "**/ci/**/*.yaml": "concourse-pipeline-yaml",
-    },
-    "files.eol": "\n",
-    "files.insertFinalNewline": true,
-    "files.trimFinalNewlines": true,
-    "git.autofetch": true,
-    "git.confirmSync": false,
-    "git.enableCommitSigning": true,
-    "git.enableSmartCommit": true,
-    "gitlens.blame.compact": true,
-    "gitlens.codeLens.scopes": [
-      "document"
-    ],
-    "markdownlint.config": {
-      "MD013": false,
-      "MD024": {
-        "siblings_only": true
-      }
-    },
-    "markdown.extension.tableFormatter.enabled": false,
-    "npm.fetchOnlinePackageInfo": false,
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "terraform.format": {
-      "ignoreExtensionsOnSave": [
-        ".tfvars"
-      ]
-    },
-    "terraform.indexing": {
-      "enabled": false,
-      "liveIndexing": false,
-      "delay": 500,
-      "exclude": [
-        ".terraform/**/*",
-        "**/.terraform/**/*"
-      ]
-    },
-    "terraform.languageServer": {
-      "enabled": true,
-      "args": []
-    },
-    "workbench.colorTheme": "Dracula Soft",
-    "workbench.enableExperiments": false,
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.startupEditor": "newUntitledFile",
-    "window.zoomLevel": 0
+  "breadcrumbs.enabled": false,
+  "editor.detectIndentation": true,
+  "editor.fontFamily": "Cascadia Code",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.multiCursorModifier": "alt",
+  "editor.renderWhitespace": "boundary",
+  "editor.rulers": [
+    80
+  ],
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 80,
+  "explorer.confirmDragAndDrop": true,
+  "extensions.showRecommendationsOnlyOnDemand": true,
+  "files.associations": {
+    "**/ci/**/*.yaml": "concourse-pipeline-yaml",
+  },
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableCommitSigning": true,
+  "git.enableSmartCommit": true,
+  "gitlens.blame.compact": true,
+  "gitlens.codeLens.scopes": [
+    "document"
+  ],
+  "markdownlint.config": {
+    "MD013": false,
+    "MD024": {
+      "siblings_only": true
+    }
+  },
+  "markdown.extension.tableFormatter.enabled": false,
+  "npm.fetchOnlinePackageInfo": false,
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "workbench.colorTheme": "Dracula Soft",
+  "workbench.enableExperiments": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "newUntitledFile",
+  "window.zoomLevel": 0,
+  "remote.SSH.remotePlatform": {
+    "hel": "linux"
+  },
+  "vscode-kms": {
+    "defaultRegion": "eu-west-1"
   }
-  
+}

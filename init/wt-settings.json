@@ -114,11 +114,11 @@
             "keys": "alt+shift+d"
         },
         {
-            "command": "unbound",
+            "command": null,
             "keys": "ctrl+shift+down"
         },
         {
-            "command": "unbound",
+            "command": null,
             "keys": "ctrl+shift+up"
         }
     ]

@@ -25,8 +25,8 @@ If `~/.gitconfig.local` exists, it will be included at the end of `.gitconfig`. 
 
 Not everything's automated unfortunately, depending on taste there's a couple of extra steps to do:
 
-- DOwnload and install the Cascadia Code font via <https://github.com/microsoft/cascadia-code>
-- Install the Dracula theme for the new Windows Terminal via <https://github.com/dracula/windows-terminal>
+- Download and install the Cascadia Code font via <https://github.com/microsoft/cascadia-code>
+- Install the Dracula theme for the your editor and terminal of choice via <https://draculatheme.com/>
 - Initialize Neovim plugins by runnin `nvim` and then executing `:PlugInstall`
 - Install & configure GUI software 😅
 

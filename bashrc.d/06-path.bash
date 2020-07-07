@@ -1,7 +1,2 @@
-if [[ "$(uname -s)" == "Darwin" ]]; then
-  PATH="${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin:$PATH"
-fi
-
-PATH="$HOME/bin:$PATH"
-PATH="$HOME/.krew/bin/:$PATH"
+PATH="$HOME/bin:$HOME/.local/bin:$HOME/.krew/bin/:$PATH"
 export PATH

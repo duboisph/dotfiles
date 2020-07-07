@@ -7,18 +7,18 @@ brew update
 brew upgrade
 
 # Install latest Bash and set as default
-brew install bash bash-completion@2
+#brew install bash bash-completion@2
 
-if ! grep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
-  echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells
-  chsh -s "${BREW_PREFIX}/bin/bash"
-fi
+#if ! grep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
+#  echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells
+#  chsh -s "${BREW_PREFIX}/bin/bash"
+#fi
 
 # Install my must-haves
-brew install \
-  git \
-  neovim \
-  tmux
+#brew install \
+#  git \
+#  neovim \
+#  tmux
 
 # Install utilities
 brew install \
@@ -28,7 +28,6 @@ brew install \
   git-crypt \
   go \
   helm \
-  googlecontainertools/kpt/kpt \
   jq \
   krew \
   kubectx \
@@ -45,8 +44,8 @@ brew install \
   terraform \
   terraform-docs \
   unzip \
-  vault \
   velero
+#  vault
 
 # Install these only on macOS (like newer version of core GNU utils)
 if [[ "$(uname -s)" == "Darwin" ]]; then

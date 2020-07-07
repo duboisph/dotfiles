@@ -85,6 +85,9 @@ export LC_ALL='en_US.UTF-8'
 LESS_TERMCAP_md="$(tput setaf 3)"
 export LESS_TERMCAP_md
 
+# Set umask
+umask 0022
+
 # === LOADING
 
 # Load extra configs

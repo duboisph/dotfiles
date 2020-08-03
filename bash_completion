@@ -4,3 +4,6 @@
 ## HASHICORP
 [[ -x "$(command -v terraform)" ]] && complete -C "$(command -v terraform)" terraform
 [[ -x "$(command -v vault)" ]] && complete -C "$(command -v vault)" vault
+
+## kitty
+[[ -x "$(command -v kitty)" ]] && source <(kitty + complete setup bash)

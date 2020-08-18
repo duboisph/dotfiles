@@ -58,3 +58,7 @@ gen-password() { openssl rand -base64 ${1:-16}; }
 
 # Kube-dashboard through kauthproxy
 alias kube-dashboard='kubectl auth-proxy -n kubernetes-dashboard https://kubernetes-dashboard.svc'
+
+# urlencode / decode
+alias urlencode='python3 -c "import sys, urllib.parse as ul; print(ul.quote_plus(sys.argv[1]))"'
+alias urldecode='python3 -c "import sys, urllib.parse as ul; print(ul.unquote_plus(sys.argv[1]))"'

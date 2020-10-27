@@ -4,7 +4,8 @@
 brew update
 brew upgrade
 
-# Add kpt tap
+# Add some taps
+brew tap weaveworks/tap
 brew tap GoogleContainerTools/kpt https://github.com/GoogleContainerTools/kpt.git
 
 # Install utilities

@@ -62,3 +62,6 @@ alias kube-dashboard='kubectl auth-proxy -n kubernetes-dashboard https://kuberne
 # urlencode / decode
 alias urlencode='python3 -c "import sys, urllib.parse as ul; print(ul.quote_plus(sys.argv[1]))"'
 alias urldecode='python3 -c "import sys, urllib.parse as ul; print(ul.unquote_plus(sys.argv[1]))"'
+
+# awscli
+#alias aws='docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'

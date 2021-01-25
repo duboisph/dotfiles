@@ -10,14 +10,7 @@ brew tap GoogleContainerTools/kpt https://github.com/GoogleContainerTools/kpt.gi
 
 # Install utilities
 brew install \
-  ansible \
-  awscli \
-  azure-cli \
-  docker-compose \
-  eksctl \
-  git-crypt \
   helm \
-  jq \
   k9s \
   kpt \
   krew \
@@ -25,16 +18,12 @@ brew install \
   kubectx \
   kubernetes-cli \
   kustomize \
-  mysql-client \
-  python-yq \
-  shellcheck \
   sonobuoy \
   sops \
   teleport \
   terraform-docs \
   tfenv \
   velero
-#  vault
 
 # Install these only on macOS (like newer version of core GNU utils)
 if [[ "$(uname -s)" == "Darwin" ]]; then

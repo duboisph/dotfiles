@@ -35,9 +35,11 @@ __prompt_git() {
 __prompt_tf() {
   local workspace
 
-  if [[ -d "${PWD}/.terraform" ]]; then
-    workspace="$(command terraform workspace show 2> /dev/null)"
-    echo -e " ${workspace}"
+  if [[ -d .terraform ]]; then
+    if [[ -f .terraform/environment ]]; then
+      workspace=$(cat .terraform/environment 2> /dev/null)
+    fi
+    echo -e " ${workspace:-default}"
   fi
 }
 

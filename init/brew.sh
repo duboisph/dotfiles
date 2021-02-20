@@ -10,7 +10,9 @@ brew tap GoogleContainerTools/kpt https://github.com/GoogleContainerTools/kpt.gi
 
 # Install utilities
 brew install \
+  aws-vault \
   helm \
+  istioctl \
   k9s \
   kpt \
   krew \
@@ -24,27 +26,3 @@ brew install \
   terraform-docs \
   tfenv \
   velero
-
-# Install these only on macOS (like newer version of core GNU utils)
-if [[ "$(uname -s)" == "Darwin" ]]; then
-  brew install \
-    bash
-    bash-completion@2
-    coreutils \
-    findutils \
-    git \
-    gnu-sed \
-    grep \
-    gnupg \
-    neovim \
-    openssh \
-    swig \
-    tmux \
-    wget
-
-  # BREW_PREFIX="$(brew --prefix)"
-  # if ! grep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
-  #   echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells
-  #   chsh -s "${BREW_PREFIX}/bin/bash"
-  # fi
-fi

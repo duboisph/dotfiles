@@ -88,6 +88,10 @@ export LESS_TERMCAP_md
 # Set umask
 umask 0022
 
+# Settings for aws-vault
+export AWS_VAULT_PROMPT=ykman
+export YKMAN_OATH_CREDENTIAL_NAME=SkyscrapersAdmin
+
 # === LOADING
 
 # Load extra configs

@@ -1,11 +1,7 @@
 # === HOMEBREW
 
 # Load Homebrew
-if [[ "$(uname -s)" == "Linux" ]]; then
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-elif [[ "$(uname -s)" == "Darwin" ]]; then
-  eval "$(/usr/local/bin/brew shellenv)"
-fi
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Load completions from installed formulae (including v1 completions)
 export BASH_COMPLETION_COMPAT_DIR="${HOMEBREW_PREFIX}/etc/bash_completion.d"

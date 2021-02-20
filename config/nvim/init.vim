@@ -14,17 +14,13 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'dracula/vim', { 'as': 'dracula' }                         " Dracula color scheme
   Plug 'godlygeek/tabular'                                        " Text alignment
   Plug 'neomake/neomake'                                          " Async linting and make
-  "Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }         " Filebrowser
   Plug 'sheerun/vim-polyglot'                                     " Collection of language packs (Ansible, Puppet, TF, ...)
-  "Plug 'sjl/gundo.vim'                                            " Visual undo tree
   Plug 'vim-airline/vim-airline'                                  " Cool statusline
-  "Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' } " Show Git status in NERDTreeToggle
   " Plugins to play nice with tmux
   Plug 'tmux-plugins/vim-tmux-focus-events'
   Plug 'roxma/vim-tmux-clipboard'
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 call plug#end()
-
 
 " === THEMING
 
@@ -32,7 +28,6 @@ call plug#end()
 set termguicolors
 colorscheme dracula
 let g:enable_bold_font=1
-
 
 " === SETTINGS
 
@@ -67,7 +62,6 @@ set relativenumber                          " Use relative line numbers
 set shiftwidth=2                            " Make indentation (>) as wide as two spaces
 set tabstop=2                               " Make tabs as wide as two spaces
 
-
 " === PLUGINSETTINGS
 
 " Set Airline (statusline) theme
@@ -78,12 +72,7 @@ augroup vimrc
 
   " Run Neomake on every write
   autocmd BufWritePost * Neomake
-
-  " Open NERDTree automatically when opening a directory
-  "autocmd StdinReadPre * let s:std_in=1
-  "autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 augroup END
-
 
 " === KEYBINDS
 
@@ -92,4 +81,3 @@ nnoremap <F2> :set invpaste paste?<CR>            " Bind F2 to pastemode (no aut
 set pastetoggle=<F2>
 nnoremap <F3> :set nolist!<CR>                    " Bind F3 to hide/unhide special characters
 noremap <leader>W :w !sudo tee % > /dev/null<CR>  " Save a file as root (,W)
-"map <C-n> :NERDTreeToggle<CR>                     " Bind C-n to NERDTree

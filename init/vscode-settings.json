@@ -45,11 +45,13 @@
   "workbench.enableExperiments": false,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "newUntitledFile",
-  "window.zoomLevel": 0,
   "remote.SSH.remotePlatform": {
     "hel": "linux"
   },
   "vscode-kms": {
     "defaultRegion": "eu-west-1"
-  }
+  },
+  "window.menuBarVisibility": "toggle",
+  "python.showStartPage": false,
+  //"editor.formatOnSaveMode": "modifications"
 }

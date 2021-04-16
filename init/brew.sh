@@ -5,12 +5,14 @@ brew update
 brew upgrade
 
 # Add some taps
+brew tap fluxcd/tap
+brew tap googlecontainertools/kpt
 brew tap weaveworks/tap
-brew tap GoogleContainerTools/kpt https://github.com/GoogleContainerTools/kpt.git
 
 # Install utilities
 brew install \
   aws-vault \
+  fluxctl \
   helm \
   istioctl \
   k9s \
@@ -22,6 +24,7 @@ brew install \
   kustomize \
   sonobuoy \
   sops \
+  starship \
   teleport \
   terraform-docs \
   tfenv \

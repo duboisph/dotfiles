@@ -31,24 +31,14 @@ alias sudo='sudo '
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # Update the system
-alias update='sudo apt update && sudo apt dist-upgrade; brew upgrade'
+alias update='sudo apt update && sudo apt full-upgrade && sudo apt autopurge -y; brew upgrade'
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload='exec $SHELL -l'
 
-# Merge PDF files, preserving hyperlinks
-# Usage: `mergepdf input{1,2,3}.pdf`
-alias mergepdf='gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=_merged.pdf'
-
-# Alias to get WSL2 time back in sync with HW
-alias timesync='sudo hwclock -s'
-
 # Passwords!
 gen-password() { openssl rand -base64 ${1:-16}; }
 
-# Kube-dashboard through kauthproxy
+# K8s
+alias kc='kubectl'
 alias kube-dashboard='kubectl auth-proxy -n kubernetes-dashboard https://kubernetes-dashboard.svc'
-
-# urlencode / decode
-alias urlencode='python3 -c "import sys, urllib.parse as ul; print(ul.quote_plus(sys.argv[1]))"'
-alias urldecode='python3 -c "import sys, urllib.parse as ul; print(ul.unquote_plus(sys.argv[1]))"'

@@ -15,6 +15,9 @@ success_symbol = "[❯](bold purple)"
 error_symbol   = "[❯](bold red)"
 vicmd_symbol   = "[❮](bold purple)"
 
+[cmd_duration]
+disabled = true
+
 [directory]
 style             = "bold blue"
 truncation_length = 5
@@ -26,3 +29,6 @@ disabled = true
 [terraform]
 style    = "bold cyan"
 disabled = false
+
+[time]
+disabled = true

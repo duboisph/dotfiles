@@ -19,6 +19,7 @@
     ~/.bash_completion: bash_completion
     ~/.bash_logout: bash_logout
     ~/.bashrc: bashrc
+    ~/.bashrc.local: bashrc.local
     ~/.gemrc: gemrc
     ~/.gitattributes: gitattributes
     ~/.gitconfig: gitconfig

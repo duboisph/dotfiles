@@ -111,3 +111,7 @@ source "$HOME/.bash_aliases"
 
 source /usr/share/bash-completion/bash_completion
 source "$HOME/.bash_completion"
+
+# === EXTRAS
+
+source "$HOME/.bashrc.local"

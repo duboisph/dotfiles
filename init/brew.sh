@@ -5,9 +5,8 @@ brew update
 brew upgrade
 
 # Add some taps
-brew tap aquasecurity/trivy
 brew tap fluxcd/tap
-brew tap weaveworks/tap
+brew tap skyscrapers/tap
 
 # Install utilities
 brew install \
@@ -17,7 +16,6 @@ brew install \
   istioctl \
   k9s \
   krew \
-  kubeaudit \
   kubectx \
   kubernetes-cli \
   kustomize \
@@ -26,6 +24,6 @@ brew install \
   starship \
   teleport \
   terraform-docs \
+  tf \
   tfenv \
-  trivy \
   velero

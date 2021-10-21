@@ -39,6 +39,8 @@ alias reload='exec $SHELL -l'
 # Passwords!
 gen-password() { openssl rand -base64 ${1:-16}; }
 
-# K8s
+# Shortcuts
 alias kc='kubectl'
 alias kube-dashboard='kubectl auth-proxy -n kubernetes-dashboard https://kubernetes-dashboard.svc'
+alias tshlogin='tsh login --auth=github'
+alias awslogin='aws-vault login'

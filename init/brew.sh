@@ -18,12 +18,11 @@ brew install \
   krew \
   kubectx \
   kubernetes-cli \
-  kustomize \
   sonobuoy \
   sops \
   starship \
   teleport \
+  terraform \
   terraform-docs \
   tf \
-  tfenv \
   velero

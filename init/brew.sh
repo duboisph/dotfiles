@@ -25,4 +25,6 @@ brew install \
   terraform \
   terraform-docs \
   tf \
-  velero
+  vault \
+  velero \
+  yq

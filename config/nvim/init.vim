@@ -1,5 +1,7 @@
 "scriptencoding utf-8
 
+set shell=/bin/bash
+
 " === PLUGINS
 
 " Download vim-plug if not installed

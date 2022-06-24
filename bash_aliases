@@ -39,36 +39,7 @@ alias update='sudo apt update && sudo apt full-upgrade && sudo apt autopurge -y;
 # Reload the shell (i.e. invoke as a login shell)
 alias reload='exec $SHELL -l'
 
-# Passwords!
-gen-password() { openssl rand -base64 ${1:-16}; }
-
 # Shortcuts
 alias kc='kubectl'
 alias kube-dashboard='kubectl auth-proxy -n kubernetes-dashboard https://kubernetes-dashboard.svc'
 alias awslogin='aws-vault login'
-
-tshl () {
-  if [ "$1" != "" ]; then
-    # Login to customer cluster
-    KUBECONFIG=/dev/null tsh login $@
-  else
-    # Login to main cluster
-    KUBECONFIG=/dev/null tsh login --auth github --proxy teleport.production.skyscrape.rs
-  fi
-}
-
-tsh-gen () {
-  KUBECONFIG=/dev/null tsh login --auth github --proxy teleport.production.skyscrape.rs
-
-  KUBEPATH="${KUBECONFIG:-$HOME/.kube/config}"
-
-  cp ${KUBEPATH} ${KUBEPATH}.bak
-
-  for cluster in $(tsh clusters | tail -n +3 | cut -f1 -d" "); do
-    tsh login $cluster
-    cluster=$cluster yq e -i '(.contexts.[] | select(.name == strenv(cluster)+"-*")) |= .name |= sub(strenv(cluster)+"-*", "")' ${KUBEPATH}
-    # remove duplicate contexts
-    yq e -i '.contexts |= unique_by(.name)' ${KUBEPATH}
-    sed -i "s+Cellar/teleport/[0-9]\.[0-9]\.[0-9]/++g" ${KUBEPATH}
-  done
-}

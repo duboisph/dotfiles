@@ -14,6 +14,7 @@ brew tap skyscrapers/tap
 brew install \
   aws-vault \
   exa \
+  fish \
   fluxctl \
   helm \
   istioctl \

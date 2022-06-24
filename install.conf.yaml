@@ -12,6 +12,9 @@
     - "~/.tmux"
 
 - link:
+    ~/.config/fish/config.fish: config/fish/config.fish
+    ~/.config/fish/conf.d/abbr.fish: config/fish/conf.d/abbr.fish
+    ~/.config/fish/conf.d/local.fish: config/fish/conf.d/local.fish
     ~/.config/nvim/init.vim: config/nvim/init.vim
     ~/.config/starship.toml: config/starship.toml
     ~/.gnupg/gpg-agent.conf: gnupg/gpg-agent.conf
@@ -36,7 +39,7 @@
 - shell:
     - command: "[[ -f /etc/lsb-release ]] && sudo apt update"
       description: Updating APT sources...
-    - command: "[[ -f /etc/lsb-release ]] && sudo apt -y install build-essential curl git git-crypt gnupg gnupg-agent neovim python3-pip shellcheck tmux xsel"
+    - command: "[[ -f /etc/lsb-release ]] && sudo apt -y install build-essential curl fish git git-crypt gnupg gnupg-agent neovim python3-pip shellcheck tmux xsel"
       description: Installing base APT packages...
     - command: '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"'
       description: Installing Homebrew...

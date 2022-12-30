@@ -1,6 +1,6 @@
 # ls
-abbr ll 'exa -lgh --icons'
-abbr la 'exa -lgha --icons'
+abbr ll 'exa -lgh'
+abbr la 'exa -lgha'
 
 # defaults
 abbr grep 'grep --color=auto'
@@ -23,7 +23,8 @@ end
 abbr myip 'dig +short myip.opendns.com @resolver1.opendns.com'
 
 # Update the system
-abbr update 'sudo apt update && sudo apt full-upgrade && sudo apt autopurge -y; brew upgrade'
+# abbr update 'sudo apt update && sudo apt full-upgrade && sudo apt autopurge -y; brew upgrade'
+abbr update 'sudo softwareupdate -i -a; brew update; brew upgrade'
 
 # Reload the shell (i.e. invoke as a login shell)
 abbr reload 'source ~/.config/fish/config.fish'

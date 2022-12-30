@@ -1,5 +1,5 @@
 # Set umask
-umask 0027
+umask 0007
 
 # Commands to run in interactive sessions
 if status is-interactive
@@ -17,20 +17,22 @@ if status is-interactive
   set -gx EDITOR nvim
 
   # Settings for aws-vault
-  set -gx AWS_VAULT_PROMPT  ykman
+  set -gx AWS_VAULT_PROMPT ykman
   set -gx YKMAN_OATH_CREDENTIAL_NAME SkyscrapersAdmin
 
   # Settings for GPG
   set -gx GPG_TTY (tty)
 
   # Load Homebrew
-  eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+  # eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+  set -gx HOMEBREW_NO_ENV_HINTS
+  eval (/opt/homebrew/bin/brew shellenv)
 
   # Load Starship Prompt
   starship init fish | source
 
   # Update PATH
-  fish_add_path --prepend --move $HOME/bin $HOME/.local/bin $HOME/.krew/bin/
+  fish_add_path --prepend --move $HOME/bin $HOME/.local/bin $HOME/.krew/bin/ /opt/homebrew/opt/gnu-sed/libexec/gnubin
 
   # Load completions
   if test -d (brew --prefix)"/share/fish/completions"

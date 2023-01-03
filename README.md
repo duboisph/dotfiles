@@ -26,6 +26,7 @@ If `~/.gitconfig.local` exists, it will be included at the end of `.gitconfig`. 
 Not everything's automated unfortunately, depending on taste there's a couple of extra steps to do:
 
 - Download and install the Cascadia Code font via <https://github.com/microsoft/cascadia-code>
+- Download and install the Caskaydia Cove font via <https://www.nerdfonts.com/font-downloads>
 - Install the Dracula theme for the your editor and terminal of choice via <https://draculatheme.com/>
 - Initialize Neovim plugins by runnin `nvim` and then executing `:PlugInstall`
 - Install & configure GUI software 😅
@@ -51,7 +52,7 @@ The code is available under the [MIT license](https://github.com/duboisph/dotfil
 
 For convenience some third party assets are hard-copied in place. These items have their own license and copyright:
 
-- [Dracula for Terminal.app](https://github.com/dracula/terminal-app). Copyright (c) 2016 Dracula Theme. MIT License
+- [Dracula for fish](https://github.com/dracula/fish). Copyright (c) 2018 Dracula Theme. MIT License
 - [Dracula for iTerm](https://github.com/dracula/iterm). Copyright (c) 2013-present Dracula Theme. MIT License
+- [Dracula for Terminal.app](https://github.com/dracula/terminal-app). Copyright (c) 2016 Dracula Theme. MIT License
 - [Dracula for Xresources](https://github.com/dracula/xresources). Copyright (c) 2016 Dracula Theme. MIT License
-- [Fira Code font](https://github.com/tonsky/FiraCode). Copyright (c) 2014, The Fira Code Project Authors. SIL Open Font License 1.1

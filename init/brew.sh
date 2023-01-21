@@ -8,6 +8,7 @@ brew upgrade
 
 # Add some taps
 brew tap azure/kubelogin
+brew tap fairwindsops/tap
 brew tap fluxcd/tap
 brew tap GoogleContainerTools/kpt https://github.com/GoogleContainerTools/kpt.git
 brew tap qmk/qmk
@@ -27,10 +28,10 @@ brew install \
   azure-cli \
   azure/kubelogin/kubelogin \
   exa \
+  fairwindsops/tap/nova \
   fluxctl \
   git \
   git-crypt \
-  gnupg \
   go \
   googlecontainertools/kpt/kpt \
   helm \
@@ -58,12 +59,14 @@ brew install \
 
 # macOS specific
 if [[ "$(uname -s)" == "Darwin" ]]; then
-  # Install GNU utils + newer versions of built-ins
   brew install \
     coreutils \
     findutils \
+    gnupg \
     gnu-sed \
     grep \
+    imagemagick \
+    telnet \
     watch
 
   # Install fonts

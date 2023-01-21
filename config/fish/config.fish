@@ -6,6 +6,9 @@ if status is-interactive
     # Remove greeting message
     set -g fish_greeting
 
+    # Set TERM
+    set -gx TERM xterm-256color
+
     # Indicate 24-bit color support
     set -gx COLORTERM truecolor
 

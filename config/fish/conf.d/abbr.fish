@@ -42,3 +42,21 @@ else if test (uname -s) = Linux
     # Update the system
     abbr update 'sudo apt update && sudo apt full-upgrade && sudo apt autopurge -y; brew update && brew upgrade'
 end
+
+## Expand .. to cd ../, ... to cd ../../ and .... to cd ../../../ and so on.
+# https://github.com/fish-shell/fish-shell/releases/tag/3.6.0
+
+function multicd
+    echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)
+end
+
+abbr --add dotdot --regex '^\.\.+$' --function multicd
+
+## Expand !! to the last history item
+# https://github.com/fish-shell/fish-shell/releases/tag/3.6.0
+
+function last_history_item
+    echo $history[1]
+end
+
+abbr --add !! --position anywhere --function last_history_item

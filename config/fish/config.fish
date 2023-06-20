@@ -28,7 +28,9 @@ if status is-interactive
 
     # Load Homebrew
     # eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-    set -gx HOMEBREW_NO_ENV_HINTS
+    set -gx HOMEBREW_NO_ENV_HINTS 1
+    set -gx HOMEBREW_NO_ANALYTICS 1
+    #set -gx HOMEBREW_NO_INSTALL_CLEANUP 1
     if test (uname -s) = Darwin
         eval (/opt/homebrew/bin/brew shellenv)
     else if test (uname -s) = Linux

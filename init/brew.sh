@@ -24,6 +24,7 @@ fi
 # Install utilities
 brew install \
   aws-vault \
+  aws/tap/ec2-instance-selector \
   aws/tap/eks-node-viewer \
   awscli \
   azure-cli \
@@ -79,8 +80,17 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 
   # Install casked apps
   brew install --cask \
+    1password \
     appcleaner \
+    choosy \
     google-chrome \
+    iterm2 \
+    keybase \
+    logi-options-plus \
+    maccy \
+    monitorcontrol \
     tunnelblick \
-    vlc
+    visual-studio-code \
+    vlc \
+    zoom
 fi

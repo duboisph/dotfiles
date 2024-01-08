@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-MYSHELL=fish
-
 # Update already-installed formulae
 brew update
 brew upgrade
@@ -10,11 +8,14 @@ brew upgrade
 brew tap azure/kubelogin
 brew tap aws/tap
 brew tap fairwindsops/tap
+brew tap fluxcd/tap
 brew tap GoogleContainerTools/kpt https://github.com/GoogleContainerTools/kpt.git
 brew tap qmk/qmk
 brew tap skyscrapers/tap
+brew tap weaveworks/tap
 
 # Set shell
+MYSHELL=fish
 brew install ${MYSHELL} starship tmux
 if ! grep -q "${BREW_PREFIX}/bin/${MYSHELL}" /etc/shells; then
   echo "${BREW_PREFIX}/bin/${MYSHELL}" | sudo tee -a /etc/shells
@@ -31,8 +32,11 @@ brew install \
   azure/kubelogin/kubelogin \
   exa \
   fairwindsops/tap/nova \
+  fluxcd/tap/flux \
   git \
   git-crypt \
+  go \
+  golangci-lint \
   googlecontainertools/kpt/kpt \
   helm \
   istioctl \
@@ -40,10 +44,10 @@ brew install \
   k9s \
   krew \
   kubectx \
+  kustomize \
   kubernetes-cli \
   logcli \
   neovim \
-  qmk/qmk/qmk \
   shellcheck \
   sonobuoy \
   sops \
@@ -52,8 +56,10 @@ brew install \
   terraform-docs \
   terragrunt \
   testssl \
+  tfk8s \
   vault \
   velero \
+  weaveworks/tap/tfctl \
   ykman \
   yq
 
@@ -81,14 +87,18 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   # Install casked apps
   brew install --cask \
     1password \
+    1password-cli \
     appcleaner \
     choosy \
+    docker \
     google-chrome \
     iterm2 \
     keybase \
     logi-options-plus \
     maccy \
     monitorcontrol \
+    qmk-toolbox \
+    rapsberry-pi-images \
     tunnelblick \
     visual-studio-code \
     vlc \

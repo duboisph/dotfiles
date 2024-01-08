@@ -12,6 +12,8 @@
 
 - link:
     ~/.config/fish/config.fish: config/fish/config.fish
+    ~/.config/fish/completions/aws-vault.fish: config/fish/completions/aws-vault.fish
+    ~/.config/fish/completions/tfctl.fish: config/fish/completions/tfctl.fish
     ~/.config/fish/conf.d/abbr.fish: config/fish/conf.d/abbr.fish
     ~/.config/fish/conf.d/dracula.fish: config/fish/conf.d/dracula.fish
     #~/.config/fish/conf.d/local.fish: config/fish/conf.d/local.fish
@@ -25,6 +27,7 @@
     ~/.hushlogin: hushlogin
     ~/.inputrc: inputrc
     ~/.terraformrc: terraformrc
+    ~/.tfdocs.d/.terraform-docs.yml: terraform-docs.yml
     ~/.tmux: tmux
     ~/.tmux.conf: tmux.conf
     ~/.Xresources: Xresources

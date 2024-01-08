@@ -6,11 +6,9 @@ if status is-interactive
     # Remove greeting message
     set -g fish_greeting
 
-    # Set TERM
-    set -gx TERM xterm-256color
-
+    set -gx TERMINFO_DIRS $TERMINFO_DIRS:$HOME/.local/share/terminfo
     # Indicate 24-bit color support
-    set -gx COLORTERM truecolor
+    #set -gx COLORTERM truecolor
 
     # Prefer US English and use UTF-8
     set -gx LANG en_US.UTF-8
@@ -20,8 +18,8 @@ if status is-interactive
     set -gx EDITOR nvim
 
     # Settings for aws-vault
-    set -gx AWS_VAULT_PROMPT ykman
-    set -gx YKMAN_OATH_CREDENTIAL_NAME SkyscrapersAdmin
+    #set -gx AWS_VAULT_PROMPT ykman
+    #set -gx YKMAN_OATH_CREDENTIAL_NAME SkyscrapersAdmin
 
     # Settings for GPG
     set -gx GPG_TTY (tty)
@@ -47,7 +45,7 @@ if status is-interactive
         #set -gx MANPATH (brew --prefix coreutils)/libexec/gnuman $MANPATH
         fish_add_path --prepend --move (brew --prefix)/opt/gnu-sed/libexec/gnubin
     end
-    fish_add_path --prepend --move $HOME/bin $HOME/.local/bin $HOME/.krew/bin/
+    fish_add_path --prepend --move $HOME/bin $HOME/.local/bin $HOME/.krew/bin/ $HOME/go/bin/
 
     # Load completions
     if test -d (brew --prefix)"/share/fish/completions"

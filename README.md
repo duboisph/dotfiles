@@ -55,4 +55,3 @@ For convenience some third party assets are hard-copied in place. These items ha
 - [Dracula for fish](https://github.com/dracula/fish). Copyright (c) 2018 Dracula Theme. MIT License
 - [Dracula for iTerm](https://github.com/dracula/iterm). Copyright (c) 2013-present Dracula Theme. MIT License
 - [Dracula for Terminal.app](https://github.com/dracula/terminal-app). Copyright (c) 2016 Dracula Theme. MIT License
-- [Dracula for Xresources](https://github.com/dracula/xresources). Copyright (c) 2016 Dracula Theme. MIT License

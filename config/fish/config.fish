@@ -17,10 +17,6 @@ if status is-interactive
     # Make nvim the default editor
     set -gx EDITOR nvim
 
-    # Settings for aws-vault
-    #set -gx AWS_VAULT_PROMPT ykman
-    #set -gx YKMAN_OATH_CREDENTIAL_NAME SkyscrapersAdmin
-
     # Settings for GPG
     set -gx GPG_TTY (tty)
 
@@ -34,6 +30,9 @@ if status is-interactive
     else if test (uname -s) = Linux
         eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
     end
+
+    # Load theme
+    fish_config theme choose "Dracula Official"
 
     # Load Starship Prompt
     starship init fish | source

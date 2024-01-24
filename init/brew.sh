@@ -11,7 +11,6 @@ brew tap fairwindsops/tap
 brew tap fluxcd/tap
 brew tap GoogleContainerTools/kpt https://github.com/GoogleContainerTools/kpt.git
 brew tap qmk/qmk
-brew tap skyscrapers/tap
 brew tap weaveworks/tap
 
 # Set shell
@@ -57,8 +56,10 @@ brew install \
   terragrunt \
   testssl \
   tfk8s \
+  tflint \
   vault \
   velero \
+  weaveworks/tap/eksctl \
   weaveworks/tap/tfctl \
   ykman \
   yq

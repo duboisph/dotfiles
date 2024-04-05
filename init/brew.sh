@@ -4,15 +4,6 @@
 brew update
 brew upgrade
 
-# Add some taps
-brew tap azure/kubelogin
-brew tap aws/tap
-brew tap fairwindsops/tap
-brew tap fluxcd/tap
-brew tap GoogleContainerTools/kpt https://github.com/GoogleContainerTools/kpt.git
-brew tap qmk/qmk
-brew tap weaveworks/tap
-
 # Set shell
 MYSHELL=fish
 brew install ${MYSHELL} starship tmux
@@ -26,7 +17,6 @@ brew install \
   aws-vault \
   aws/tap/eks-node-viewer \
   awscli \
-  chezmoi \
   exa \
   fairwindsops/tap/nova \
   fluxcd/tap/flux \
@@ -75,14 +65,6 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     watch \
     wget
 
-  # Install fonts
-  brew install --cask \
-    homebrew/cask-fonts/font-cascadia-code \
-    homebrew/cask-fonts/font-cascadia-code-pl \
-    homebrew/cask-fonts/font-cascadia-mono \
-    homebrew/cask-fonts/font-cascadia-mono-pl \
-    homebrew/cask-fonts/font-caskaydia-cove-nerd-font
-
   # Install casked apps
   brew install --cask \
     1password \
@@ -91,13 +73,12 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     choosy \
     docker \
     google-chrome \
+    homebrew/cask-fonts/font-cascadia-code-pl \
     iterm2 \
     keybase \
     logi-options-plus \
     maccy \
     monitorcontrol \
-    qmk-toolbox \
-    rapsberry-pi-images \
     tunnelblick \
     visual-studio-code \
     vlc \

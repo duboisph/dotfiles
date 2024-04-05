@@ -1,0 +1,4 @@
+# Display both CPU and memory
+resources=cpu,memory
+# Show role, AZ
+extra-labels=role,topology.kubernetes.io/zone

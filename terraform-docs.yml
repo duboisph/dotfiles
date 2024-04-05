@@ -1,8 +1,0 @@
-formatter: "markdown"
-
-sort:
-  enabled: true
-  by: required
-
-settings:
-  escape: false

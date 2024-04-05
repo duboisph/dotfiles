@@ -21,7 +21,7 @@ truncation_length = 5
 truncate_to_repo  = true
 
 [kubernetes]
-disabled = true
+disabled = false
 
 [terraform]
 style    = "bold cyan"

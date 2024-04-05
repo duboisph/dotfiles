@@ -1,14 +1,10 @@
 # Dotfiles
 
-## Installation
-
 **Warning:** If you want to give these dotfiles a try, you should first fork this repository, review the code, and change things according to your own taste. Use at your own risk!
 
-[Dotbot](https://github.com/anishathalye/dotbot) is used for installation. After cloning this repo, run `./install` to automatically set up the environment. Note that the install script is idempotent: it can safely be run multiple times.
+## Customization
 
-### Customization
-
-#### `.gitconfig.local`
+### `.gitconfig.local`
 
 If `~/.gitconfig.local` exists, it will be included at the end of `.gitconfig`. You can use this to set personal and/or sensitive information such as your `git` user credentials.
 
@@ -20,16 +16,6 @@ If `~/.gitconfig.local` exists, it will be included at the end of `.gitconfig`. 
 [commit]
   gpgsign = true
 ```
-
-## Manual steps
-
-Not everything's automated unfortunately, depending on taste there's a couple of extra steps to do:
-
-- Download and install the Cascadia Code font via <https://github.com/microsoft/cascadia-code>
-- Download and install the Caskaydia Cove font via <https://www.nerdfonts.com/font-downloads>
-- Install the Dracula theme for the your editor and terminal of choice via <https://draculatheme.com/>
-- Initialize Neovim plugins by runnin `nvim` and then executing `:PlugInstall`
-- Install & configure GUI software 😅
 
 ## Feedback
 

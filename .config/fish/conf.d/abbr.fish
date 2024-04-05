@@ -26,7 +26,7 @@ abbr reload 'source ~/.config/fish/config.fish'
 abbr kc kubectl
 abbr avl 'aws-vault login'
 abbr fly-clean 'fly prune-worker --all-stalled'
-abbr tfdocs terraform-docs
+abbr tfdocs 'terraform-docs markdown --sort-by required --escape=false'
 
 # IP address
 abbr myip 'dig +short myip.opendns.com @resolver1.opendns.com'

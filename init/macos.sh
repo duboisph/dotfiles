@@ -27,9 +27,7 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-###############################################################################
-# General UI/UX                                                               #
-###############################################################################
+## General
 
 # Set computer name (as done via System Preferences -> Sharing)
 sudo scutil --set ComputerName "${HOSTNAME}"
@@ -48,45 +46,10 @@ defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
 defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 
-# Increase window resize speed for Cocoa applications
-#defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
-
-# Expand save panel by default
-#defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
-#defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
-
-# Expand print panel by default
-#defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
-#defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
-
-# Save to disk (not to iCloud) by default
-#defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
-
-# Automatically quit printer app once the print jobs complete
-#defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
-
-# Disable Resume system-wide
-#defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
-
-# Disable automatic termination of inactive apps
-#defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
-
-# Disable automatic capitalization as it's annoying when typing code
-#defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
-
-# Disable smart dashes as they're annoying when typing code
-#defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
-
-# Disable automatic period substitution as it's annoying when typing code
-#defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
-
-# Disable smart quotes as they're annoying when typing code
-#defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
-
-# Disable auto-correct
-#defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
-
-## Hardware
+# Disable smart dashes, smart quotes and auto-correct
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Use "natural" scrolling
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
@@ -104,9 +67,6 @@ defaults write NSGlobalDomain AppleLocale -string "en_BE"
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
 sudo systemsetup -settimezone "Europe/Brussels" > /dev/null
-
-# Enable subpixel font rendering on non-Apple LCDs
-defaults write NSGlobalDomain AppleFontSmoothing -int 1
 
 ## Finder
 
@@ -149,7 +109,7 @@ sudo chflags nohidden /Volumes
 
 ## Dock
 
-# Show Dock on the left side
+# Show Dock on the bottom
 # Possible values: `left`, `bottom`, `right`
 defaults write com.apple.dock orientation -string "bottom"
 
@@ -183,7 +143,7 @@ defaults write com.apple.dock show-recents -bool false
 ## Terminal & iTerm 2
 
 # Install the Dracula theme for Terminal
-open "${PWD}/init/Dracula.terminal"
+#open "${PWD}/init/Dracula.terminal"
 
 # Enable Secure Keyboard Entry in Terminal
 defaults write com.apple.terminal SecureKeyboardEntry -bool true

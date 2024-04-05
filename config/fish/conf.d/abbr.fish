@@ -24,7 +24,6 @@ abbr reload 'source ~/.config/fish/config.fish'
 
 # Shortcuts
 abbr kc kubectl
-abbr kube-dashboard 'kubectl auth-proxy -n kubernetes-dashboard https://kubernetes-dashboard.svc'
 abbr avl 'aws-vault login'
 abbr fly-clean 'fly prune-worker --all-stalled'
 abbr tfdocs terraform-docs

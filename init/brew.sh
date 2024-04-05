@@ -24,14 +24,13 @@ fi
 # Install utilities
 brew install \
   aws-vault \
-  aws/tap/ec2-instance-selector \
   aws/tap/eks-node-viewer \
   awscli \
-  azure-cli \
-  azure/kubelogin/kubelogin \
+  chezmoi \
   exa \
   fairwindsops/tap/nova \
   fluxcd/tap/flux \
+  gh \
   git \
   git-crypt \
   go \
@@ -45,13 +44,12 @@ brew install \
   kubectx \
   kustomize \
   kubernetes-cli \
-  logcli \
   neovim \
+  opentofu \
   shellcheck \
   sonobuoy \
   sops \
   teleport \
-  terraform \
   terraform-docs \
   terragrunt \
   testssl \

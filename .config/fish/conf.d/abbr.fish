@@ -1,6 +1,6 @@
 # ls
-abbr ll 'exa -lgh'
-abbr la 'exa -lgha'
+abbr ll 'eza -lgh'
+abbr la 'eza -lgha'
 
 # Defaults
 abbr grep 'grep --color=auto'

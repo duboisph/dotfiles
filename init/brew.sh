@@ -17,7 +17,7 @@ brew install \
   aws-vault \
   aws/tap/eks-node-viewer \
   awscli \
-  exa \
+  eza \
   fairwindsops/tap/nova \
   fluxcd/tap/flux \
   gh \
@@ -35,21 +35,18 @@ brew install \
   kustomize \
   kubernetes-cli \
   neovim \
-  opentofu \
   shellcheck \
   sonobuoy \
   sops \
   teleport \
+  tenv \
   terraform-docs \
-  terragrunt \
-  testssl \
   tfk8s \
   tflint \
   vault \
   velero \
   weaveworks/tap/eksctl \
   weaveworks/tap/tfctl \
-  ykman \
   yq
 
 # macOS specific
@@ -70,15 +67,13 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     1password \
     1password-cli \
     appcleaner \
-    choosy \
-    docker \
-    google-chrome \
+    bettermouse \
+    homebrew/cask-fonts/font-cascadia-code \
     homebrew/cask-fonts/font-cascadia-code-pl \
     iterm2 \
     keybase \
-    logi-options-plus \
     maccy \
-    monitorcontrol \
+    tailscale \
     tunnelblick \
     visual-studio-code \
     vlc \

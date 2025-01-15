@@ -23,11 +23,8 @@ brew install \
   gh \
   git \
   git-crypt \
-  go \
-  golangci-lint \
   googlecontainertools/kpt/kpt \
   helm \
-  istioctl \
   jq \
   k9s \
   krew \
@@ -35,15 +32,14 @@ brew install \
   kustomize \
   kubernetes-cli \
   neovim \
+  opentofu \
   shellcheck \
   sonobuoy \
   sops \
-  teleport \
-  tenv \
   terraform-docs \
+  terragrunt \
   tfk8s \
   tflint \
-  vault \
   velero \
   weaveworks/tap/eksctl \
   weaveworks/tap/tfctl \
@@ -74,7 +70,6 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     keybase \
     maccy \
     tailscale \
-    tunnelblick \
     visual-studio-code \
     vlc \
     zoom

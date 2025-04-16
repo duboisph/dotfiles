@@ -43,6 +43,7 @@ if status is-interactive
         #fish_add_path --prepend --move (brew --prefix coreutils)/libexec/gnubin (brew --prefix)/opt/gnu-sed/libexec/gnubin
         #set -gx MANPATH (brew --prefix coreutils)/libexec/gnuman $MANPATH
         fish_add_path --prepend --move (brew --prefix)/opt/gnu-sed/libexec/gnubin
+        fish_add_path --prepend --move (brew --prefix)/opt/ruby/bin
     end
     fish_add_path --prepend --move $HOME/bin $HOME/.local/bin $HOME/.krew/bin/ $HOME/go/bin/
 

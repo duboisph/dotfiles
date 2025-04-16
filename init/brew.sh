@@ -64,8 +64,8 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     1password-cli \
     appcleaner \
     bettermouse \
-    homebrew/cask-fonts/font-cascadia-code \
-    homebrew/cask-fonts/font-cascadia-code-pl \
+    font-cascadia-code \
+    font-cascadia-code-pl \
     iterm2 \
     keybase \
     maccy \

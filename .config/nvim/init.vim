@@ -30,10 +30,6 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
-" Bind F2 to pastemode (no auto-indentation)
-nnoremap <F2> :set invpaste paste?<CR>
-set pastetoggle=<F2>
-
 " Settings
 set clipboard=unnamedplus                  " Use the OS clipboard
 set colorcolumn=80,120                     " Mark the 80th, 120th columns

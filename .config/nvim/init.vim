@@ -20,10 +20,6 @@ let g:enable_bold_font=1
 " Set Airline (statusline) theme
 let g:airline#extensions#tabline#enabled=1
 
-" Enable the Python providers
-let g:python_host_prog  = '/home/linuxbrew/.linuxbrew/bin/python'
-let g:python3_host_prog = '/home/linuxbrew/.linuxbrew/bin/python3'
-
 " Change cursor depending on mode
 " http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -35,14 +31,14 @@ set clipboard=unnamedplus                  " Use the OS clipboard
 set colorcolumn=80,120                     " Mark the 80th, 120th columns
 set cursorline                             " Highlight current line
 set expandtab                              " Use spaces instead of tabs
-set fixeol                                  " Add blank line at the end of a file if missing
+set fixeol                                 " Add blank line at the end of a file if missing
 set gdefault                               " Add the g flag to search/replace by default
 set ignorecase                             " Ignore case of searches
 set lazyredraw                             " Buffer screen updates
 set list                                   " Show invisible characters
 set listchars=tab:>\ ,trail:·,eol:¬,nbsp:_ " Set invisible characters
 set modeline                               " Respect modeline in files
-set nostartofline                           " Don’t reset cursor to start of line when moving around
+set nostartofline                          " Don’t reset cursor to start of line when moving around
 set number                                 " Enable line numbers
 set relativenumber                         " Use relative line numbers
 set shiftwidth=2                           " Make indentation (>) as wide as two spaces

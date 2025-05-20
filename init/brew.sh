@@ -14,16 +14,12 @@ fi
 
 # Install utilities
 brew install \
-  aws-vault \
   aws/tap/eks-node-viewer \
   awscli \
   eza \
-  fairwindsops/tap/nova \
   fluxcd/tap/flux \
   gh \
   git \
-  git-crypt \
-  googlecontainertools/kpt/kpt \
   helm \
   jq \
   k9s \
@@ -36,13 +32,9 @@ brew install \
   shellcheck \
   sonobuoy \
   sops \
-  terraform-docs \
   terragrunt \
-  tfk8s \
   tflint \
   velero \
-  weaveworks/tap/eksctl \
-  weaveworks/tap/tfctl \
   yq
 
 # macOS specific

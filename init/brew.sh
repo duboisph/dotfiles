@@ -6,7 +6,7 @@ brew upgrade
 
 # Set shell
 MYSHELL=fish
-brew install ${MYSHELL} starship tmux
+brew install ${MYSHELL} starship
 if ! grep -q "${BREW_PREFIX}/bin/${MYSHELL}" /etc/shells; then
   echo "${BREW_PREFIX}/bin/${MYSHELL}" | sudo tee -a /etc/shells
   chsh -s "${BREW_PREFIX}/bin/${MYSHELL}"

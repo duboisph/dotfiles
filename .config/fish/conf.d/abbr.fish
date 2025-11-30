@@ -22,11 +22,6 @@ end
 # Reload the shell (i.e. invoke as a login shell)
 abbr reload 'source ~/.config/fish/config.fish'
 
-# Shortcuts
-abbr kc kubectl
-abbr avl 'aws-vault login'
-abbr fly-clean 'fly prune-worker --all-stalled'
-
 # IP address
 abbr myip 'dig +short myip.opendns.com @resolver1.opendns.com'
 
@@ -43,7 +38,8 @@ if test (uname -s) = Darwin
     abbr cleardns 'sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 else if test (uname -s) = Linux
     # Update the system
-    abbr update 'sudo apt update && sudo apt full-upgrade && sudo apt autopurge -y; brew update && brew upgrade'
+    # abbr update 'sudo apt update && sudo apt full-upgrade && sudo apt autopurge -y; brew update && brew upgrade'
+    abbr update 'sudo apt update && sudo apt full-upgrade && sudo apt autopurge -y'
 end
 
 ## Expand .. to cd ../, ... to cd ../../ and .... to cd ../../../ and so on.

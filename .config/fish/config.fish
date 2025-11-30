@@ -15,24 +15,27 @@ set -gx GPG_TTY (tty)
 set -gx HOMEBREW_NO_ENV_HINTS 1
 set -gx HOMEBREW_NO_ANALYTICS 1
 if test (uname -s) = Darwin
-    eval (/opt/homebrew/bin/brew shellenv)
+    set -gx HOMEBREW_PREFIX /opt/homebrew
 else if test (uname -s) = Linux
-    eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    set -gx HOMEBREW_PREFIX "/home/linuxbrew/.linuxbrew"
+end
+if test -d $HOMEBREW_PREFIX
+    eval ($HOMEBREW_PREFIX/bin/brew shellenv)
 end
 
 # Update PATH
 if test (uname -s) = Darwin
-    fish_add_path --prepend --move (brew --prefix)/opt/gnu-sed/libexec/gnubin
-    fish_add_path --prepend --move (brew --prefix)/opt/ruby/bin
+    and test -d $HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin
+    fish_add_path --prepend --move $HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin
 end
-fish_add_path --prepend --move $HOME/bin $HOME/.local/bin $HOME/.krew/bin/ $HOME/go/bin/
+fish_add_path --prepend --move $HOME/bin
 
 # Load completions
-if test -d (brew --prefix)"/share/fish/completions"
-    set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/completions
+if test -d "$HOMEBREW_PREFIX/share/fish/completions"
+    set -gx fish_complete_path $fish_complete_path $HOMEBREW_PREFIX/share/fish/completions
 end
-if test -d (brew --prefix)"/share/fish/vendor_completions.d"
-    set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
+if test -d "$HOMEBREW_PREFIX/share/fish/vendor_completions.d"
+    set -gx fish_complete_path $fish_complete_path $HOMEBREW_PREFIX/share/fish/vendor_completions.d
 end
 
 for file in ~/.config/fish/completions/*.fish

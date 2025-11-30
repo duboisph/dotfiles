@@ -38,6 +38,9 @@ if test (uname -s) = Darwin
     # Show/hide hidden files in Finder
     abbr show 'defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
     abbr hide 'defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'
+
+    # Clear DNS cache
+    abbr cleardns 'sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 else if test (uname -s) = Linux
     # Update the system
     abbr update 'sudo apt update && sudo apt full-upgrade && sudo apt autopurge -y; brew update && brew upgrade'

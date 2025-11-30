@@ -14,7 +14,6 @@ set -gx GPG_TTY (tty)
 # Load Homebrew
 set -gx HOMEBREW_NO_ENV_HINTS 1
 set -gx HOMEBREW_NO_ANALYTICS 1
-set -gx HOMEBREW_NO_INSTALL_CLEANUP 1
 if test (uname -s) = Darwin
     eval (/opt/homebrew/bin/brew shellenv)
 else if test (uname -s) = Linux
